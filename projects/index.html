@@ -62,18 +62,30 @@
   .card-mock{
     width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;
     transition:transform 0.6s cubic-bezier(.2,.8,.2,1);
+    position:relative;
+    overflow:hidden;
   }
   .gallery-card.tall .card-mock{aspect-ratio:3/4;}
   .gallery-card:hover .card-mock{transform:scale(1.06);}
-  .gallery-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.6s cubic-bezier(.2,.8,.2,1);}
-  .gallery-card:hover img{transform:scale(1.06);}
-  .mock-text{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,56px);letter-spacing:0.06em;opacity:0.2;}
+  .card-mock img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform 0.6s cubic-bezier(.2,.8,.2,1);
+    position:absolute;
+    top:0;
+    left:0;
+  }
+  .gallery-card:hover .card-mock img{transform:scale(1.06);}
+  .mock-text{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,56px);letter-spacing:0.06em;opacity:0.2;position:relative;z-index:1;}
 
   .card-overlay{
     position:absolute;inset:0;
     background:linear-gradient(to top,rgba(10,10,10,0.92) 0%,rgba(10,10,10,0.1) 50%,transparent 100%);
     opacity:0;transition:opacity 0.35s ease;
     display:flex;flex-direction:column;justify-content:flex-end;padding:28px;
+    z-index:2;
   }
   .gallery-card:hover .card-overlay{opacity:1;}
   .card-cat{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
@@ -84,12 +96,14 @@
     border:1px solid rgba(255,255,255,0.15);background:rgba(0,0,0,0.4);
     display:flex;align-items:center;justify-content:center;font-size:14px;color:rgba(255,255,255,0.4);
     transition:all 0.3s;
+    z-index:3;
   }
   .gallery-card:hover .card-arrow{color:var(--accent);border-color:var(--accent);transform:translate(3px,-3px);}
   .card-badge{
     position:absolute;top:20px;left:20px;
     font-size:10px;letter-spacing:0.15em;text-transform:uppercase;
     color:var(--bg);background:var(--accent);padding:4px 10px;font-weight:700;
+    z-index:3;
   }
 
   /* LIGHTBOX */
@@ -185,8 +199,8 @@
 
     <!-- TRUENDO -->
     <div class="gallery-card tall" data-category="fullstack production" data-title="Truendo" data-desc="A production-grade consent management platform built at Decidio. Full-stack on a live product serving real enterprise clients — handling complex privacy compliance flows, real-time data, and high-availability infrastructure." data-stack="TypeScript · React · Node.js · Go · Docker · Kubernetes" data-url="https://truendo.com">
-      <div class="card-mock" style="background:linear-gradient(135deg,#0d1117 0%,#1a2332 60%,#0d1117 100%);">
-        <span class="mock-text" style="color:#00d4ff;">TRUENDO</span>
+      <div class="card-mock">
+        <img src="/images/truendo.png" alt="Truendo — consent management platform" loading="lazy">
       </div>
       <div class="card-badge">Production</div>
       <div class="card-arrow">↗</div>
@@ -197,30 +211,29 @@
       </div>
     </div>
 
-    <!-- CASINO -->
-    <div class="gallery-card" data-category="fullstack frontend" data-title="Casino" data-desc="A modern casino suite platform with full game logic, real-time interactions, and a sleek dark interface. Built to be fast and fun." data-stack="React · Node.js" data-url="https://www.elshaddaiinteriors.co.za"
->
-      <div class="card-mock" style="background:linear-gradient(135deg,#1a0800 0%,#2d1200 60%,#1a0800 100%);">
-        <span class="mock-text" style="color:#ff6b35;">El-Shaddai Interiors</span>
+    <!-- EL-SHADDAI INTERIORS -->
+    <div class="gallery-card" data-category="fullstack frontend" data-title="El-Shaddai Interiors" data-desc="A modern interiors showcase platform with full project galleries, real-time interactions, and a sleek dark interface. Built to be fast and elegant." data-stack="HTML · CSS · JavaScript · Vercel" data-url="https://www.elshaddaiinteriors.co.za">
+      <div class="card-mock">
+        <img src="/images/elshaddaiinteriors.png" alt="El-Shaddai Interiors — interiors showcase" loading="lazy">
       </div>
       <div class="card-arrow">↗</div>
       <div class="card-overlay">
         <div class="card-cat">Full Stack</div>
         <div class="card-title display">El-Shaddai Interiors</div>
-        <div class="card-stack">HTML, CSS , JS, Vercel</div>
+        <div class="card-stack">HTML · CSS · JS · Vercel</div>
       </div>
     </div>
 
-    <!-- HIREWAVE -->
-    <div class="gallery-card" data-category="fullstack frontend" data-title="Hirewave" data-desc="A modern, simplistic job platform connecting candidates and employers. Clean UI, straightforward UX, and a full backend." data-stack="React · Node.js" data-url="https://staticpengu.vercel.app">
-      <div class="card-mock" style="background:linear-gradient(135deg,#020a04 0%,#081408 60%,#020a04 100%);">
-        <span class="mock-text" style="color:#00ffa3;">Static Pengu</span>
+    <!-- STATIC PENGU -->
+    <div class="gallery-card" data-category="fullstack frontend" data-title="Static Pengu" data-desc="A modern, simplistic job platform connecting candidates and employers. Clean UI, straightforward UX, and a full backend." data-stack="React · Node.js · MongoDB · Vercel · BunnyCDN" data-url="https://staticpengu.vercel.app">
+      <div class="card-mock">
+        <img src="/images/staticpengu.png" alt="Static Pengu — job platform" loading="lazy">
       </div>
       <div class="card-arrow">↗</div>
       <div class="card-overlay">
         <div class="card-cat">Full Stack</div>
         <div class="card-title display">Static Pengu</div>
-        <div class="card-stack">React · Node.js · MongoDB · Vercel · BunnyCDN </div>
+        <div class="card-stack">React · Node.js · MongoDB · Vercel · BunnyCDN</div>
       </div>
     </div>
 
@@ -269,8 +282,8 @@
       <h4>Projects</h4>
       <ul>
         <li><a href="https://truendo.com" target="_blank" rel="noopener">Truendo</a></li>
-        <li><a href="https://casino-alpha-two.vercel.app/" target="_blank" rel="noopener">Casino</a></li>
-        <li><a href="https://hirewave-frontend.vercel.app/" target="_blank" rel="noopener">Hirewave</a></li>
+        <li><a href="https://www.elshaddaiinteriors.co.za" target="_blank" rel="noopener">El-Shaddai Interiors</a></li>
+        <li><a href="https://staticpengu.vercel.app" target="_blank" rel="noopener">Static Pengu</a></li>
         <li><a href="https://nexus-theta-ivory.vercel.app" target="_blank" rel="noopener">Nexus</a></li>
       </ul>
     </div>
