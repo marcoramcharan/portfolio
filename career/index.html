@@ -1,618 +1,757 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Marco Ramcharan — Career</title>
-<meta name="description" content="Marco Ramcharan's career journey — from interior fitter at El-Shaddai Interiors to full-stack developer at Decidio GmbH on the Truendo consent management platform.">
+<meta name="description" content="Marco Ramcharan's career journey — from interior fitting at El-Shaddai Interiors to full-stack developer at Decidio GmbH, and ongoing technical and SEO work for the business.">
 <link rel="icon" type="image/png" href="/images/favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root{
+    --bg:#0a0a0a;
+    --bg-2:#121212;
+    --line:#2a2a2a;
+    --txt:#f5f3ee;
+    --txt-dim:#9a968d;
+    --accent:#d8ff3e;
+    --green:#00ffa3;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--txt);
+    font-family:'Space Grotesk',sans-serif;
+    overflow-x:hidden;
+  }
+  .display{font-family:'Bebas Neue',sans-serif;letter-spacing:0.04em;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;}
 
-  :root {
-    --bg: #080a0c;
-    --bg2: #0d1117;
-    --surface: #111820;
-    --surface2: #141c24;
-    --border: #1e2d3d;
-    --border2: #243547;
-    --cyan: #00d4ff;
-    --cyan-dim: rgba(0,212,255,0.08);
-    --cyan-glow: rgba(0,212,255,0.35);
-    --white: #f0f4f8;
-    --muted: #5a6e7e;
-    --text: #a8bccc;
-    --orange: #ff6b35;
-    --green: #00ffa3;
+  /* NAV */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:28px 6vw;
+    background:linear-gradient(to bottom,rgba(10,10,10,0.92) 0%,transparent 100%);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(42,42,42,0.5);
   }
+  .logo{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.08em;color:var(--txt);}
+  nav ul{display:flex;gap:36px;list-style:none;}
+  nav a{color:var(--txt-dim);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
+  nav a:hover,nav a.active{color:var(--accent);}
+  .nav-cta{
+    font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:0.14em;
+    text-transform:uppercase;font-weight:700;border:1px solid var(--accent);
+    color:var(--accent);padding:9px 22px;transition:background 0.2s,color 0.2s;
+  }
+  .nav-cta:hover{background:var(--accent);color:var(--bg);}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;z-index:70;padding:6px;}
+  .burger span{width:26px;height:2px;background:var(--txt);display:block;transition:transform 0.3s,opacity 0.3s;}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .burger.open span:nth-child(2){opacity:0;}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-menu{
+    position:fixed;inset:0;background:var(--bg);z-index:55;
+    display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
+    padding:6vw;gap:20px;
+    transform:translateY(-100%);
+    transition:transform 0.4s ease,visibility 0.4s;
+    visibility:hidden;
+  }
+  .mobile-menu.open{transform:translateY(0);visibility:visible;}
+  .mobile-menu a{color:var(--txt);font-family:'Bebas Neue',sans-serif;font-size:13vw;text-transform:uppercase;line-height:1;}
+  .mobile-menu a:hover{color:var(--accent);}
+  .mobile-menu .mm-sub{margin-top:36px;display:flex;gap:20px;}
+  .mobile-menu .mm-sub a{font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:0.14em;}
+  @media(max-width:800px){nav ul,.nav-cta{display:none;}.burger{display:flex;}}
 
-  html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Mono', monospace;
-    font-weight: 300;
-    overflow-x: hidden;
-  }
-  body.menu-open { overflow: hidden; }
+  /* PAGE HEADER */
+  .page-header{padding:160px 6vw 80px;border-bottom:1px solid var(--line);}
+  .eyebrow{font-size:13px;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;}
+  .page-header h1{font-size:clamp(56px,12vw,180px);line-height:0.9;text-transform:uppercase;margin-bottom:40px;}
+  .page-header-sub{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;}
+  .page-header-sub p{max-width:520px;font-size:17px;color:var(--txt-dim);line-height:1.65;}
 
-  body::before {
-    content: '';
-    position: fixed; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none; z-index: 1000; opacity: 0.35;
-  }
-
-  .grid-bg {
-    position: fixed; inset: 0; pointer-events: none; z-index: 0;
-    background-image: linear-gradient(rgba(0,212,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.02) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 60% 60% at 50% 0%, black, transparent);
-  }
-
-  /* ─── NAV ─── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-    padding: 1.25rem 4rem;
-    display: flex; align-items: center; justify-content: space-between;
-    background: rgba(8,10,12,0.92); backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(30,45,61,0.5);
-  }
-  .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; color: var(--white); letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; }
-  .nav-logo span { color: var(--cyan); }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; transition: color .2s; position: relative; }
-  .nav-links a.active, .nav-links a:hover { color: var(--cyan); }
-  .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--cyan); transition: width .25s; }
-  .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-  .nav-cta { background: var(--cyan); border: none; color: var(--bg); font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 1.25rem; transition: box-shadow .2s, transform .2s; text-decoration: none; font-weight: 400; display: inline-block; }
-  .nav-cta:hover { box-shadow: 0 0 24px var(--cyan-glow); transform: translateY(-1px); }
-
-  /* ─── HAMBURGER BUTTON ─── */
-  .nav-hamburger {
-    display: none;
-    flex-direction: column; justify-content: center; align-items: center;
-    width: 44px; height: 44px;
-    background: transparent; border: 1px solid var(--border);
-    cursor: pointer; gap: 5px;
-    position: relative; z-index: 600;
-    transition: border-color 0.2s; flex-shrink: 0; padding: 0;
-  }
-  .nav-hamburger:hover { border-color: var(--cyan); }
-  .nav-hamburger span {
-    display: block; width: 20px; height: 1px; background: var(--white);
-    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.2s, background 0.2s;
-    transform-origin: center;
-  }
-  .nav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); background: var(--cyan); }
-  .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-  .nav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); background: var(--cyan); }
-
-  /* ─── FULLSCREEN MOBILE MENU ─── */
-  .mobile-menu {
-    position: fixed; inset: 0; z-index: 490;
-    background: var(--bg);
-    display: flex; flex-direction: column;
-    justify-content: center; align-items: flex-start;
-    padding: 6rem 2.5rem 3rem;
-    pointer-events: none;
-    opacity: 0; transform: translateY(-20px);
-    transition: opacity 0.35s ease, transform 0.4s cubic-bezier(0.4,0,0.2,1);
-  }
-  .mobile-menu::after {
-    content: ''; position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(0,212,255,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,212,255,0.025) 1px, transparent 1px);
-    background-size: 40px 40px; pointer-events: none;
-  }
-  .mobile-menu.open { opacity: 1; transform: translateY(0); pointer-events: all; }
-
-  .mobile-menu-nav {
-    list-style: none; display: flex; flex-direction: column;
-    width: 100%; margin-bottom: 3rem; position: relative; z-index: 1;
-  }
-  .mobile-menu-nav li { border-bottom: 1px solid var(--border); overflow: hidden; }
-  .mobile-menu-nav li:first-child { border-top: 1px solid var(--border); }
-  .mobile-menu-nav a {
-    display: flex; align-items: center; justify-content: space-between;
-    text-decoration: none; padding: 1.2rem 0;
-    color: var(--white);
-    font-family: 'Syne', sans-serif; font-weight: 800;
-    font-size: clamp(1.7rem, 8vw, 2.4rem); letter-spacing: -0.01em;
-    opacity: 0; transform: translateX(-24px);
-    transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s, padding-left 0.25s;
-  }
-  .mobile-menu.open .mobile-menu-nav a { opacity: 1; transform: translateX(0); }
-  .mobile-menu.open .mobile-menu-nav li:nth-child(1) a { transition-delay: 0.06s; }
-  .mobile-menu.open .mobile-menu-nav li:nth-child(2) a { transition-delay: 0.11s; }
-  .mobile-menu.open .mobile-menu-nav li:nth-child(3) a { transition-delay: 0.16s; }
-  .mobile-menu.open .mobile-menu-nav li:nth-child(4) a { transition-delay: 0.21s; }
-  .mobile-menu.open .mobile-menu-nav li:nth-child(5) a { transition-delay: 0.26s; }
-  .mobile-menu-nav a:hover { color: var(--cyan); padding-left: 0.5rem; }
-  .mobile-link-num { font-family: 'DM Mono', monospace; font-size: 0.6rem; font-weight: 300; color: var(--muted); letter-spacing: 0.15em; align-self: flex-end; margin-bottom: 0.4rem; transition: color 0.2s; }
-  .mobile-menu-nav a:hover .mobile-link-num { color: var(--cyan); }
-
-  .mobile-menu-footer {
-    position: relative; z-index: 1;
-    opacity: 0; transform: translateY(10px);
-    transition: opacity 0.3s ease 0.35s, transform 0.3s ease 0.35s;
-  }
-  .mobile-menu.open .mobile-menu-footer { opacity: 1; transform: translateY(0); }
-  .mobile-menu-footer .hire-btn {
-    display: inline-block; background: var(--cyan); color: var(--bg);
-    font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em;
-    text-transform: uppercase; padding: 0.65rem 1.5rem; text-decoration: none;
-    margin-bottom: 1.25rem; transition: box-shadow 0.2s;
-  }
-  .mobile-menu-footer .hire-btn:hover { box-shadow: 0 0 20px var(--cyan-glow); }
-  .mobile-menu-contact { font-size: 0.62rem; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; }
-  .mobile-menu-contact a { color: var(--cyan); text-decoration: none; }
-
-  /* PAGE */
-  .page { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 8rem 2rem 6rem; }
-
-  /* PAGE HERO */
-  .page-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 5rem; opacity: 0; animation: fadeUp .6s .1s forwards; }
-  .hero-label { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.75rem; }
-  .hero-label::before { content: '// '; opacity:.5; }
-  .page-hero h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2.8rem,5.5vw,4.5rem); color: var(--white); letter-spacing: -0.03em; line-height: 1; }
-  .page-hero h1 span { color: var(--cyan); }
-  .hero-right { padding-bottom: 0.5rem; }
-  .hero-right p { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.05rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem; }
-  .hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
-  .hstat-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.8rem; color: var(--white); line-height: 1; }
-  .hstat-num span { color: var(--cyan); }
-  .hstat-label { font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.2rem; }
+  /* HERO STATS */
+  .hero-stats{display:flex;gap:48px;flex-wrap:wrap;padding-top:12px;}
+  .hstat{display:flex;flex-direction:column;gap:4px;}
+  .hstat-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(36px,5vw,56px);line-height:1;color:var(--txt);}
+  .hstat-num span{color:var(--accent);}
+  .hstat-label{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--txt-dim);}
 
   /* STATUS PILL */
-  .status-pill {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--green); border: 1px solid rgba(0,255,163,0.25);
-    background: rgba(0,255,163,0.05);
-    padding: 0.35rem 0.75rem; margin-bottom: 1rem;
+  .status-pill{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:11px;letter-spacing:0.16em;text-transform:uppercase;
+    color:var(--green);
+    border:1px solid rgba(0,255,163,0.25);
+    background:rgba(0,255,163,0.05);
+    padding:7px 14px;margin-bottom:20px;
+    align-self:flex-start;
   }
-  .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+  .status-dot{
+    width:7px;height:7px;border-radius:50%;background:var(--green);
+    animation:pulse 2.4s infinite;
+  }
+  @keyframes pulse{
+    0%,100%{box-shadow:0 0 0 0 rgba(0,255,163,0.4);}
+    50%{box-shadow:0 0 0 6px rgba(0,255,163,0);}
+  }
+
+  /* SECTIONS */
+  section{padding:100px 6vw;}
+  .section-head{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    margin-bottom:64px;gap:24px;flex-wrap:wrap;
+    border-bottom:1px solid var(--line);padding-bottom:32px;
+  }
+  .section-head h2{
+    font-size:clamp(36px,6vw,72px);
+    text-transform:uppercase;line-height:1;
+  }
+  .section-head .tag{
+    font-size:13px;letter-spacing:0.2em;text-transform:uppercase;
+    color:var(--txt-dim);max-width:340px;text-align:right;
+  }
+  @media(max-width:700px){.section-head .tag{text-align:left;max-width: none;}}
 
   /* SKILLS SNAPSHOT */
-  .skills-snapshot { padding: 1.5rem; border: 1px solid var(--border); background: var(--bg2); margin-bottom: 4rem; opacity: 0; animation: fadeUp .6s .25s forwards; }
-  .snap-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
-  .snap-group { margin-bottom: 1rem; }
-  .snap-group:last-child { margin-bottom: 0; }
-  .snap-group-label { font-size: 0.55rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.5rem; opacity: 0.7; }
-  .snap-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .snap-pill { font-size: 0.65rem; letter-spacing: 0.06em; padding: 0.35rem 0.85rem; border: 1px solid var(--border); background: var(--surface); color: var(--text); transition: border-color .2s, color .2s, background .2s; }
-  .snap-pill:hover { border-color: var(--cyan); color: var(--cyan); background: var(--cyan-dim); }
-  .snap-pill.core { border-color: rgba(0,212,255,0.3); color: var(--white); background: var(--cyan-dim); }
-
-  /* TIMELINE WRAPPER */
-  .timeline-wrapper { display: grid; grid-template-columns: 200px 1fr; gap: 0 3rem; }
-
-  /* STICKY YEAR NAV */
-  .year-nav { position: sticky; top: 6rem; height: fit-content; display: flex; flex-direction: column; gap: 0; opacity: 0; animation: fadeUp .6s .3s forwards; }
-  .year-nav-item { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 0.6rem 0.75rem; border-left: 2px solid var(--border); transition: color .2s, border-color .2s; text-decoration: none; display: block; }
-  .year-nav-item.active, .year-nav-item:hover { color: var(--cyan); border-color: var(--cyan); }
-  .year-nav-item .yn-period { display: block; font-size: 0.55rem; color: var(--muted); margin-top: 0.1rem; }
+  .skills-snapshot{
+    border:1px solid var(--line);
+    background:var(--bg-2);
+    padding:40px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:32px;
+  }
+  .skill-group-block h3{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;text-transform:uppercase;
+    color:var(--accent);letter-spacing:0.06em;
+    margin-bottom:16px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .skill-group-block h3::after{
+    content:'';flex:1;height:1px;background:var(--line);
+  }
+  .pills{display:flex;flex-wrap:wrap;gap:8px;}
+  .pill{
+    font-size:12px;letter-spacing:0.06em;
+    color:var(--txt-dim);border:1px solid var(--line);
+    padding:7px 14px;background:var(--bg);
+    transition:border-color 0.2s,color 0.2s;
+  }
+  .pill:hover{border-color:var(--accent);color:var(--accent);}
+  .pill.core{
+    border-color:rgba(216,255,62,0.3);
+    color:var(--txt);
+    background:rgba(216,255,62,0.05);
+  }
+  @media(max-width:900px){.skills-snapshot{grid-template-columns:repeat(2,1fr);gap:28px;}}
+  @media(max-width:560px){.skills-snapshot{grid-template-columns:1fr;padding:28px;}}
 
   /* TIMELINE */
-  .timeline { position: relative; }
-  .timeline::before { content: ''; position: absolute; left: -1.5rem; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--cyan) 0%, var(--border) 60%, transparent 100%); }
+  .timeline-section{padding-top:0;}
+  .timeline{
+    position:relative;
+    display:flex;flex-direction:column;
+    max-width:900px;
+  }
+  .timeline::before{
+    content:'';position:absolute;left:6px;top:0;bottom:0;width:1px;
+    background:linear-gradient(to bottom,var(--accent),var(--line) 60%,transparent);
+  }
+  .tl-item{
+    padding:0 0 56px 40px;
+    position:relative;
+  }
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-dot{
+    position:absolute;left:0;top:14px;
+    width:13px;height:13px;
+    border:2px solid var(--accent);background:var(--bg);
+    border-radius:50%;
+    transform:translateX(0);
+    transition:background 0.2s,box-shadow 0.2s;
+  }
+  .tl-item:hover .tl-dot{background:var(--accent);box-shadow:0 0 12px rgba(216,255,62,0.4);}
+  .tl-dot.orange{border-color:#ff6b35;}
+  .tl-item:hover .tl-dot.orange{background:#ff6b35;box-shadow:0 0 12px rgba(255,107,53,0.4);}
+  .tl-dot.green{border-color:var(--green);}
+  .tl-item:hover .tl-dot.green{background:var(--green);box-shadow:0 0 12px rgba(0,255,163,0.4);}
 
-  /* JOB CARD */
-  .job-card { position: relative; margin-bottom: 2rem; opacity: 0; transform: translateY(24px); transition: opacity .6s, transform .6s; }
-  .job-card.visible { opacity: 1; transform: translateY(0); }
-  .job-dot { position: absolute; left: -1.5rem; top: 1.75rem; width: 13px; height: 13px; border: 2px solid var(--cyan); background: var(--bg); border-radius: 50%; transform: translate(-50%, -50%); z-index: 2; transition: background .2s, box-shadow .2s; }
-  .job-card:hover .job-dot { background: var(--cyan); box-shadow: 0 0 12px var(--cyan-glow); }
-  .job-inner { background: var(--bg2); border: 1px solid var(--border); overflow: hidden; transition: border-color .25s, background .25s; }
-  .job-card:hover .job-inner { border-color: var(--border2); background: var(--surface); }
-  .job-topbar { display: flex; align-items: stretch; border-bottom: 1px solid var(--border); }
-  .job-accent { width: 4px; flex-shrink: 0; background: var(--cyan); }
-  .job-accent.orange { background: var(--orange); }
-  .job-header { flex: 1; padding: 1.5rem 1.75rem; display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-  .job-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--cyan); margin-bottom: 0.2rem; transition: color .2s; }
-  .job-company { font-size: 0.75rem; color: var(--white); letter-spacing: 0.04em; }
-  .job-meta { text-align: right; flex-shrink: 0; }
-  .job-location { font-size: 0.62rem; color: var(--muted); margin-bottom: 0.3rem; }
-  .job-period { font-size: 0.62rem; color: var(--muted); }
-  .job-body { padding: 1.75rem; }
-  .job-section-title { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.85rem; display: flex; align-items: center; gap: 0.6rem; }
-  .job-section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-  .job-desc { font-family: 'Instrument Serif', serif; font-size: 1rem; line-height: 1.75; color: var(--text); margin-bottom: 1.75rem; padding-left: 1rem; border-left: 2px solid var(--border); }
-  .job-card:hover .job-desc { border-left-color: var(--border2); }
-  .resp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
-  .resp-item { background: var(--surface); padding: 0.85rem 1rem; display: flex; align-items: flex-start; gap: 0.75rem; transition: background .2s; }
-  .resp-item:hover { background: var(--surface2); }
-  .resp-num { font-size: 0.55rem; letter-spacing: 0.1em; color: var(--cyan); flex-shrink: 0; margin-top: 2px; width: 16px; }
-  .resp-text { font-size: 0.72rem; line-height: 1.45; color: var(--text); }
-  .job-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.25rem; }
-  .j-tag { font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cyan); border: 1px solid rgba(0,212,255,0.2); padding: 0.2rem 0.5rem; background: var(--cyan-dim); }
-  .j-tag.orange { color: var(--orange); border-color: rgba(255,107,53,0.25); background: rgba(255,107,53,0.06); }
+  .tl-card{
+    background:var(--bg-2);
+    border:1px solid var(--line);
+    transition:border-color 0.25s,background 0.25s;
+  }
+  .tl-item:hover .tl-card{border-color:#3a3a3a;background:#161616;}
+
+  .tl-header{
+    display:flex;justify-content:space-between;align-items:flex-start;
+    gap:24px;padding:28px 32px;
+    border-bottom:1px solid var(--line);
+    flex-wrap:wrap;
+  }
+  .tl-role-block{display:flex;flex-direction:column;gap:4px;}
+  .tl-date{
+    font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:6px;
+  }
+  .tl-date.orange{color:#ff6b35;}
+  .tl-date.green{color:var(--green);}
+  .tl-role{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(22px,3vw,32px);
+    text-transform:uppercase;line-height:1;
+  }
+  .tl-role.orange{color:#ff6b35;}
+  .tl-role.green{color:var(--green);}
+  .tl-company{
+    font-size:13px;color:var(--txt-dim);
+    letter-spacing:0.04em;
+  }
+  .tl-meta{
+    text-align:right;display:flex;flex-direction:column;gap:6px;
+    flex-shrink:0;
+  }
+  .tl-meta-line{
+    font-size:12px;color:var(--txt-dim);
+    letter-spacing:0.06em;
+  }
+  .tl-meta-line::before{
+    content:'// ';color:var(--accent);opacity:0.5;margin-right:2px;
+  }
+  .tl-meta-line.orange::before{color:#ff6b35;}
+  .tl-meta-line.green::before{color:var(--green);}
+
+  .tl-body{padding:28px 32px;}
+  .tl-body-label{
+    font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+    color:var(--txt-dim);margin-bottom:14px;
+  }
+  .tl-desc{
+    font-size:15px;color:var(--txt-dim);line-height:1.7;
+    padding-left:16px;
+    border-left:2px solid var(--line);
+    margin-bottom:28px;
+  }
+  .tl-responsibilities{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px 32px;
+    margin-bottom:24px;
+  }
+  .tl-resp{
+    display:flex;gap:10px;align-items:flex-start;
+    font-size:14px;line-height:1.55;color:var(--txt);
+  }
+  .tl-resp-num{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:13px;color:var(--accent);
+    letter-spacing:0.06em;flex-shrink:0;margin-top:1px;
+  }
+  .tl-resp-num.orange{color:#ff6b35;}
+  .tl-resp-num.green{color:var(--green);}
+  @media(max-width:700px){.tl-responsibilities{grid-template-columns:1fr;}}
+
+  .tl-tech{display:flex;flex-wrap:wrap;gap:6px;}
+  .tl-tag{
+    font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--accent);
+    border:1px solid rgba(216,255,62,0.25);
+    background:rgba(216,255,62,0.06);
+    padding:5px 10px;
+  }
+  .tl-tag.orange{
+    color:#ff6b35;border-color:rgba(255,107,53,0.25);
+    background:rgba(255,107,53,0.06);
+  }
+  .tl-tag.green{
+    color:var(--green);border-color:rgba(0,255,163,0.25);
+    background:rgba(0,255,163,0.06);
+  }
+
+  @media(max-width:560px){
+    .tl-header{padding:22px 20px;flex-direction:column;gap:12px;}
+    .tl-meta{text-align:left;}
+    .tl-body{padding:22px 20px;}
+  }
 
   /* TRANSITION CALLOUT */
-  .transition-callout { margin: 0 0 2rem 0; padding: 1.5rem 1.75rem; border: 1px solid var(--border); border-left: 3px solid var(--green); background: rgba(0,255,163,0.04); opacity: 0; transform: translateY(16px); transition: opacity .6s, transform .6s; }
-  .transition-callout.visible { opacity: 1; transform: translateY(0); }
-  .tc-label { font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green); margin-bottom: 0.5rem; }
-  .tc-text { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1rem; color: var(--white); line-height: 1.6; }
-  .tc-text span { color: var(--cyan); font-style: normal; }
+  .transition-callout{
+    background:var(--bg-2);
+    border:1px solid var(--line);
+    border-left:3px solid var(--green);
+    padding:28px 32px;
+    margin-bottom:56px;
+    max-width:900px;
+  }
+  .tc-label{
+    font-size:11px;letter-spacing:0.2em;text-transform:uppercase;
+    color:var(--green);margin-bottom:12px;
+  }
+  .tc-text{
+    font-size:15px;line-height:1.7;color:var(--txt);
+  }
+  .tc-text strong{color:var(--accent);font-weight:500;}
 
-  /* EDUCATION CARD */
-  .edu-card { background: var(--bg2); border: 1px solid var(--border); padding: 1.5rem 1.75rem; display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; opacity: 0; transform: translateY(16px); transition: opacity .6s .1s, transform .6s .1s, border-color .2s; }
-  .edu-card.visible { opacity: 1; transform: translateY(0); }
-  .edu-card:hover { border-color: var(--border2); }
-  .edu-icon-big { width: 52px; height: 52px; flex-shrink: 0; background: var(--cyan-dim); border: 1px solid rgba(0,212,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
-  .edu-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; color: var(--white); margin-bottom: 0.3rem; }
-  .edu-sub { font-size: 0.7rem; color: var(--muted); line-height: 1.5; }
+  /* EDUCATION */
+  .edu-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:3px;
+    background:var(--line);border:1px solid var(--line);
+  }
+  .edu-card{
+    background:var(--bg-2);padding:36px;
+    display:flex;gap:20px;align-items:flex-start;
+    transition:background 0.2s;
+  }
+  .edu-card:hover{background:#161616;}
+  .edu-icon{
+    width:52px;height:52px;flex-shrink:0;
+    border:1px solid var(--line);
+    background:var(--bg);
+    display:flex;align-items:center;justify-content:center;
+    font-size:22px;
+  }
+  .edu-icon.highlight{
+    border-color:rgba(216,255,62,0.3);
+    background:rgba(216,255,62,0.05);
+  }
+  .edu-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:22px;text-transform:uppercase;line-height:1.1;
+    margin-bottom:8px;
+  }
+  .edu-title.highlight{color:var(--accent);}
+  .edu-sub{
+    font-size:14px;color:var(--txt-dim);line-height:1.65;
+  }
+  @media(max-width:700px){.edu-grid{grid-template-columns:1fr;}}
 
-  /* BOTTOM CTA */
-  .career-cta { margin-top: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); opacity: 0; animation: fadeUp .6s .6s forwards; }
-  .cta-half { background: var(--bg2); padding: 2.5rem 2rem; transition: background .2s; }
-  .cta-half:hover { background: var(--surface); }
-  .cta-half h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--white); margin-bottom: 0.5rem; }
-  .cta-half p { font-size: 0.72rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.5rem; }
-  .btn-cyan { background: var(--cyan); color: var(--bg); font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.75rem 1.75rem; border: none; text-decoration: none; transition: box-shadow .2s, transform .2s; display: inline-block; }
-  .btn-cyan:hover { box-shadow: 0 0 24px var(--cyan-glow); transform: translateY(-1px); }
-  .btn-outline { background: transparent; color: var(--white); font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.75rem 1.75rem; border: 1px solid var(--border); text-decoration: none; transition: border-color .2s, color .2s; display: inline-block; }
-  .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
+  /* CTA STRIP */
+  .cta-strip{
+    border-top:1px solid var(--line);
+    padding:120px 6vw;text-align:center;
+  }
+  .cta-strip h2{
+    font-size:clamp(40px,9vw,140px);
+    text-transform:uppercase;line-height:0.95;
+    margin-bottom:40px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:12px;
+    background:var(--accent);color:#0a0a0a;
+    padding:18px 40px;border-radius:100px;
+    font-size:14px;letter-spacing:0.15em;text-transform:uppercase;font-weight:700;
+    transition:transform 0.25s ease,box-shadow 0.25s ease;
+  }
+  .btn:hover{transform:scale(1.05);box-shadow:0 0 30px rgba(216,255,62,0.25);}
+  .cta-sub{color:var(--txt-dim);font-size:15px;margin-top:24px;}
+  .cta-sub a{color:var(--txt);border-bottom:1px solid var(--line);}
+  .cta-sub a:hover{color:var(--accent);border-color:var(--accent);}
 
   /* FOOTER */
-  footer { padding: 2rem 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: var(--bg2); position: relative; z-index: 1; flex-wrap: wrap; gap: 1rem; }
-  .footer-copy { font-size: 0.65rem; color: var(--muted); }
-  .footer-copy span { color: var(--cyan); }
-  .footer-links { display: flex; gap: 2rem; }
-  .footer-links a { font-size: 0.65rem; color: var(--muted); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: color .2s; }
-  .footer-links a:hover { color: var(--cyan); }
+  footer{border-top:1px solid var(--line);padding:80px 6vw 36px;background:var(--bg-2);}
+  .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid var(--line);margin-bottom:32px;}
+  .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:0.08em;display:block;margin-bottom:16px;color:var(--txt);}
+  .footer-tagline{font-size:14px;color:var(--txt-dim);line-height:1.7;max-width:300px;margin-bottom:20px;}
+  .footer-socials{display:flex;gap:10px;}
+  .footer-social{width:38px;height:38px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--txt-dim);transition:border-color 0.2s,color 0.2s;}
+  .footer-social:hover{border-color:var(--accent);color:var(--accent);}
+  .footer-col h4{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;font-weight:500;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-col a{color:var(--txt-dim);font-size:13px;transition:color 0.2s;}
+  .footer-col a:hover{color:var(--accent);}
+  .footer-col p{color:var(--txt-dim);font-size:13px;line-height:1.7;}
+  .footer-col p a{color:var(--txt);}
+  .hire-btn{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;padding:9px 20px;transition:background 0.2s,color 0.2s;margin-top:12px;}
+  .hire-btn:hover{background:var(--accent);color:var(--bg);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .footer-copy{font-size:12px;color:var(--txt-dim);}
+  .footer-copy span{color:var(--accent);}
+  .footer-bottom-links{display:flex;gap:20px;}
+  .footer-bottom-links a{font-size:11px;color:var(--txt-dim);letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
+  .footer-bottom-links a:hover{color:var(--accent);}
 
-  @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
-
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.25rem; }
-    .nav-links { display: none; }
-    .nav-cta { display: none; }
-    .nav-hamburger { display: flex; }
-    .page { padding: 6rem 1rem 4rem; }
-    .page-hero { grid-template-columns: 1fr; gap: 2rem; }
-    .timeline-wrapper { grid-template-columns: 1fr; }
-    .year-nav { display: none; }
-    .timeline::before { left: 0; }
-    .job-dot { left: 0; }
-    .resp-grid { grid-template-columns: 1fr 1fr; }
-    .career-cta { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 1rem; padding: 1.5rem; }
-    .mobile-menu { padding: 5rem 1.5rem 3rem; }
-    .job-meta { text-align: left; }
-  }
-  @media (max-width: 600px) {
-    .resp-grid { grid-template-columns: 1fr; }
+  @media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;gap:36px;}.footer-brand{grid-column:1/-1;}}
+  @media(max-width:560px){
+    .footer-top{grid-template-columns:1fr;}
+    .page-header{padding:130px 6vw 60px;}
+    section{padding:64px 6vw;}
+    .cta-strip{padding:80px 6vw;}
   }
 
   /* REDUCED MOTION */
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
-    .job-card, .transition-callout, .edu-card { opacity: 1 !important; transform: none !important; }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .status-dot{animation:none;}
+    *{transition:none !important;}
   }
 
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
 </style>
 </head>
 <body>
 
-<div class="grid-bg"></div>
-
-<!-- FULLSCREEN MOBILE MENU -->
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <ul class="mobile-menu-nav">
-    <li><a href="/" class="mobile-nav-link"><span>Home</span><span class="mobile-link-num">01</span></a></li>
-    <li><a href="/about/" class="mobile-nav-link"><span>About</span><span class="mobile-link-num">02</span></a></li>
-    <li><a href="/projects/" class="mobile-nav-link"><span>Projects</span><span class="mobile-link-num">03</span></a></li>
-    <li><a href="/career/" class="mobile-nav-link"><span>Career</span><span class="mobile-link-num">04</span></a></li>
-    <li><a href="/contact/" class="mobile-nav-link"><span>Contact</span><span class="mobile-link-num">05</span></a></li>
-  </ul>
-  <div class="mobile-menu-footer">
-    <a href="mailto:miguelmarcoramcharan@gmail.com" class="hire-btn">Hire Me</a>
-    <div class="mobile-menu-contact" style="margin-top: 0.5rem;">
-      <a href="mailto:miguelmarcoramcharan@gmail.com">miguelmarcoramcharan@gmail.com</a>
-    </div>
+  <a href="/">Home</a>
+  <a href="/about/">About</a>
+  <a href="/projects/">Projects</a>
+  <a href="/career/">Career</a>
+  <a href="/contact/">Contact</a>
+  <div class="mm-sub">
+    <a href="https://github.com/marcoramcharan" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="mailto:miguelmarcoramcharan@gmail.com">Email</a>
   </div>
 </div>
 
 <!-- NAV -->
 <nav>
-  <a href="/" class="nav-logo">Marco <span>R.</span></a>
-  <ul class="nav-links">
+  <a href="/" class="logo display" style="text-decoration:none;">MARCO</a>
+  <ul>
+    <li><a href="/">Home</a></li>
     <li><a href="/about/">About</a></li>
     <li><a href="/projects/">Projects</a></li>
     <li><a href="/career/" class="active">Career</a></li>
     <li><a href="/contact/">Contact</a></li>
   </ul>
   <a href="mailto:miguelmarcoramcharan@gmail.com" class="nav-cta">Hire Me</a>
-  <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
-    <span></span>
-    <span></span>
-    <span></span>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
   </button>
 </nav>
 
-
-<div class="page">
-
-  <!-- HERO -->
-  <div class="page-hero">
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <div class="eyebrow">Career — Durban, South Africa</div>
+  <h1 class="display">The full<br>journey.</h1>
+  <div class="page-header-sub">
     <div>
-      <div class="hero-label">Career</div>
-      <h1>The full <span>journey.</span></h1>
+      <div class="status-pill"><span class="status-dot" aria-hidden="true"></span>Open to opportunities</div>
+      <p>From assembling furniture in Durban to contributing to production software for enterprise clients, and back to hands-on technical work for the family business. Every step taught me something the next one needed.</p>
     </div>
-    <div class="hero-right">
-      <div class="status-pill"><span class="status-dot"></span>Open to opportunities</div>
-      <p>From assembling furniture in Durban to contributing to production software for enterprise clients. Every step taught me something the next one needed.</p>
-      <div class="hero-stats">
-        <div><div class="hstat-num">9<span>+</span></div><div class="hstat-label">Years in the Workforce</div></div>
-        <div><div class="hstat-num">2</div><div class="hstat-label">Industries</div></div>
-        <div><div class="hstat-num">1</div><div class="hstat-label">Production Product</div></div>
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="hstat-num display">9<span>+</span></div>
+        <div class="hstat-label">Years in the workforce</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-num display">2</div>
+        <div class="hstat-label">Industries</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-num display">1</div>
+        <div class="hstat-label">Production product</div>
       </div>
     </div>
   </div>
+</header>
 
-  <!-- SKILLS SNAPSHOT -->
+<!-- TECH SNAPSHOT -->
+<section>
+  <div class="section-head">
+    <h2 class="display">Tech snapshot</h2>
+    <div class="tag">Tools and technologies I've worked with across production and independent projects.</div>
+  </div>
   <div class="skills-snapshot">
-    <div class="snap-label">// Current tech stack</div>
-
-    <div class="snap-group">
-      <div class="snap-group-label">Application Development</div>
-      <div class="snap-pills">
-        <span class="snap-pill core">TypeScript</span>
-        <span class="snap-pill core">React</span>
-        <span class="snap-pill">HTML / CSS</span>
+    <div class="skill-group-block">
+      <h3>Frontend</h3>
+      <div class="pills">
+        <span class="pill core">TypeScript</span>
+        <span class="pill core">React</span>
+        <span class="pill">HTML</span>
+        <span class="pill">CSS</span>
       </div>
     </div>
-
-    <div class="snap-group">
-      <div class="snap-group-label">Backend &amp; APIs</div>
-      <div class="snap-pills">
-        <span class="snap-pill core">Node.js</span>
-        <span class="snap-pill core">Go</span>
-        <span class="snap-pill">Python</span>
-        <span class="snap-pill">REST APIs</span>
+    <div class="skill-group-block">
+      <h3>Backend &amp; APIs</h3>
+      <div class="pills">
+        <span class="pill core">Node.js</span>
+        <span class="pill core">Go</span>
+        <span class="pill">Python</span>
+        <span class="pill">REST APIs</span>
       </div>
     </div>
-
-    <div class="snap-group">
-      <div class="snap-group-label">Databases &amp; Messaging</div>
-      <div class="snap-pills">
-        <span class="snap-pill core">SQL</span>
-        <span class="snap-pill">PostgreSQL</span>
-        <span class="snap-pill">RabbitMQ</span>
+    <div class="skill-group-block">
+      <h3>Databases</h3>
+      <div class="pills">
+        <span class="pill core">SQL</span>
+        <span class="pill">PostgreSQL</span>
+        <span class="pill">MongoDB</span>
+        <span class="pill">RabbitMQ</span>
       </div>
     </div>
-
-    <div class="snap-group">
-      <div class="snap-group-label">Infrastructure &amp; DevOps</div>
-      <div class="snap-pills">
-        <span class="snap-pill core">Docker</span>
-        <span class="snap-pill core">Kubernetes</span>
-        <span class="snap-pill">AWS</span>
-        <span class="snap-pill">GCP</span>
-        <span class="snap-pill">Jenkins</span>
+    <div class="skill-group-block">
+      <h3>Infra &amp; DevOps</h3>
+      <div class="pills">
+        <span class="pill core">Docker</span>
+        <span class="pill core">Kubernetes</span>
+        <span class="pill">AWS</span>
+        <span class="pill">GCP</span>
+        <span class="pill">Jenkins</span>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- TIMELINE GRID -->
-  <div class="timeline-wrapper">
-
-    <!-- STICKY YEAR NAV -->
-    <div class="year-nav">
-      <a href="#job-decidio" class="year-nav-item active">
-        Decidio
-        <span class="yn-period">2023 — 2025</span>
-      </a>
-      <a href="#job-fitter" class="year-nav-item">
-        El-Shaddai Interiors
-        <span class="yn-period">2016 — 2022</span>
-      </a>
-      <a href="#edu" class="year-nav-item">
-        Education
-        <span class="yn-period">Self-taught</span>
-      </a>
-    </div>
-
-    <!-- TIMELINE -->
-    <div class="timeline">
-
-      <!-- JOB 1 — DECIDIO -->
-      <div class="job-card reveal" id="job-decidio">
-        <div class="job-dot"></div>
-        <div class="job-inner">
-          <div class="job-topbar">
-            <div class="job-accent"></div>
-            <div class="job-header">
-              <div class="job-title-block">
-                <div class="job-title">Fullstack Developer</div>
-                <div class="job-company">Decidio GmbH · Truendo Product</div>
-              </div>
-              <div class="job-meta">
-                <div class="job-location">📍 Durban, South Africa</div>
-                <div class="job-period">📅 2023 — 2025</div>
-              </div>
-            </div>
-          </div>
-          <div class="job-body">
-            <div class="job-section-title">Description</div>
-            <div class="job-desc">
-              I joined Decidio as a support agent on the Truendo consent management platform, then progressed into a developer role working across backend, frontend, and DevOps. I contributed to a live production product serving enterprise clients — deepening my work in Docker, Kubernetes, Go, and TypeScript as I took on more of the stack.
-            </div>
-            <div class="job-section-title">Responsibilities</div>
-            <div class="resp-grid">
-              <div class="resp-item"><span class="resp-num">01</span><span class="resp-text">Implemented and maintained full-stack product features across frontend and backend</span></div>
-              <div class="resp-item"><span class="resp-num">02</span><span class="resp-text">Investigated and resolved software defects and production issues</span></div>
-              <div class="resp-item"><span class="resp-num">03</span><span class="resp-text">Optimised database queries and supported data migration work</span></div>
-              <div class="resp-item"><span class="resp-num">04</span><span class="resp-text">Assisted with Docker container and infrastructure migration tasks</span></div>
-              <div class="resp-item"><span class="resp-num">05</span><span class="resp-text">Supported DevOps operations and CI/CD deployment pipelines</span></div>
-              <div class="resp-item"><span class="resp-num">06</span><span class="resp-text">Investigated and resolved customer-reported technical issues</span></div>
-              <div class="resp-item"><span class="resp-num">07</span><span class="resp-text">Contributed to consent-record migration work on the platform</span></div>
-              <div class="resp-item"><span class="resp-num">08</span><span class="resp-text">Worked on API-related tasks and backend service changes</span></div>
-              <div class="resp-item"><span class="resp-num">09</span><span class="resp-text">Collaborated with the team on fixes, releases, and hotfixes</span></div>
-            </div>
-            <div class="job-tech">
-              <span class="j-tag">TypeScript</span><span class="j-tag">React</span><span class="j-tag">Go</span><span class="j-tag">Docker</span><span class="j-tag">Kubernetes</span><span class="j-tag">AWS</span><span class="j-tag">GCP</span><span class="j-tag">Jenkins</span><span class="j-tag">SQL</span><span class="j-tag">RabbitMQ</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- TRANSITION CALLOUT -->
-      <div class="transition-callout reveal">
-        <div class="tc-label">// Career pivot · 2021 — 2023</div>
-        <div class="tc-text">
-          After several years in the trades, I decided to pursue software. I taught myself the fundamentals through documentation, online resources, and personal projects — building, breaking, and rebuilding until things worked. That work led to <span>a professional developer role at Decidio</span>, where I've been able to apply what I learned to real production software.
-        </div>
-      </div>
-
-      <!-- JOB 2 — FITTER -->
-      <div class="job-card reveal" id="job-fitter">
-        <div class="job-dot" style="border-color:var(--orange)"></div>
-        <div class="job-inner">
-          <div class="job-topbar">
-            <div class="job-accent orange"></div>
-            <div class="job-header">
-              <div class="job-title-block">
-                <div class="job-title" style="color:var(--orange)">Fitter / Interior Installation</div>
-                <div class="job-company">El-Shaddai Interiors</div>
-              </div>
-              <div class="job-meta">
-                <div class="job-location">📍 Durban, South Africa</div>
-                <div class="job-period">📅 2016 — 2022</div>
-              </div>
-            </div>
-          </div>
-          <div class="job-body">
-            <div class="job-section-title">Description</div>
-            <div class="job-desc" style="border-left-color: rgba(255,107,53,0.3)">
-              I started working with my father straight after high school. Over the years I learned the trade from the ground up — handling supplier orders, assembling units, fitting on-site, and managing a team. A practical foundation that shaped how I approach problem-solving and quality in any kind of work.
-            </div>
-            <div class="job-section-title">Responsibilities</div>
-            <div class="resp-grid">
-              <div class="resp-item"><span class="resp-num" style="color:var(--orange)">01</span><span class="resp-text">Received and processed supplier orders</span></div>
-              <div class="resp-item"><span class="resp-num" style="color:var(--orange)">02</span><span class="resp-text">Checked order accuracy and completeness</span></div>
-              <div class="resp-item"><span class="resp-num" style="color:var(--orange)">03</span><span class="resp-text">Categorised pieces based on the units to be built</span></div>
-              <div class="resp-item"><span class="resp-num" style="color:var(--orange)">04</span><span class="resp-text">Assembled and built interior units</span></div>
-              <div class="resp-item"><span class="resp-num" style="color:var(--orange)">05</span><span class="resp-text">Fitted and finished units on-site</span></div>
-              <div class="resp-item"><span class="resp-num" style="color:var(--orange)">06</span><span class="resp-text">Allocated tasks and coordinated the team</span></div>
-            </div>
-            <div class="job-tech">
-              <span class="j-tag orange">Team Coordination</span><span class="j-tag orange">Precision</span><span class="j-tag orange">Problem Solving</span><span class="j-tag orange">Client Relations</span><span class="j-tag orange">Attention to Detail</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- EDUCATION -->
-      <div id="edu">
-        <div class="job-section-title" style="margin-bottom:1.5rem; opacity:.6">// Education &amp; Background</div>
-        <div class="edu-card reveal">
-          <div class="edu-icon-big">🏫</div>
-          <div>
-            <div class="edu-title">High School Diploma</div>
-            <div class="edu-sub">Completed secondary education · Durban, South Africa</div>
-          </div>
-        </div>
-        <div class="edu-card reveal" style="border-color: rgba(0,212,255,0.2); background: var(--cyan-dim);">
-          <div class="edu-icon-big" style="font-size:1.4rem">💻</div>
-          <div>
-            <div class="edu-title" style="color:var(--cyan)">Self-Taught Developer</div>
-            <div class="edu-sub">Learned software development independently through documentation, online resources, and hands-on personal projects — then applied that foundation to a professional production role.</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+<!-- TIMELINE -->
+<section class="timeline-section" style="padding-top:0;">
+  <div class="section-head">
+    <h2 class="display">Experience</h2>
+    <div class="tag">Professional software work, ongoing technical support, self-taught development, and trade background.</div>
   </div>
 
-  <!-- BOTTOM CTA -->
-  <div class="career-cta">
-    <div class="cta-half">
-      <h3>Open to opportunities.</h3>
-      <p>If you're hiring for a full-stack or backend role, or you're working on an interesting problem — I'd like to hear about it.</p>
-      <a href="/contact/" class="btn-cyan">Contact me →</a>
+  <div class="timeline">
+
+    <!-- 2026 — PRESENT: SEO / TECHNICAL (EL-SHADDAI) -->
+    <div class="tl-item">
+      <div class="tl-dot green"></div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <div class="tl-role-block">
+            <div class="tl-date green">2026 — Present</div>
+            <div class="tl-role display green">SEO &amp; Technical Support</div>
+            <div class="tl-company">El-Shaddai Interiors · Web &amp; Digital</div>
+          </div>
+          <div class="tl-meta">
+            <div class="tl-meta-line green">Durban, South Africa</div>
+            <div class="tl-meta-line green">Ongoing · Part-time</div>
+          </div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-body-label">// Description</div>
+          <div class="tl-desc" style="border-left-color: rgba(0,255,163,0.3);">
+            Ongoing technical and SEO work for the family business — maintaining the public website, improving search visibility, and handling the web-side technical tasks that keep the business running online.
+          </div>
+
+          <div class="tl-body-label">// Responsibilities</div>
+          <div class="tl-responsibilities">
+            <div class="tl-resp"><span class="tl-resp-num green">01</span><span>Maintaining and updating the El-Shaddai Interiors website</span></div>
+            <div class="tl-resp"><span class="tl-resp-num green">02</span><span>SEO work — on-page optimisation, metadata, and search visibility</span></div>
+            <div class="tl-resp"><span class="tl-resp-num green">03</span><span>Handling technical web tasks and site-related fixes</span></div>
+            <div class="tl-resp"><span class="tl-resp-num green">04</span><span>Supporting the business's online presence and digital operations</span></div>
+          </div>
+
+          <div class="tl-tech">
+            <span class="tl-tag green">SEO</span>
+            <span class="tl-tag green">HTML</span>
+            <span class="tl-tag green">CSS</span>
+            <span class="tl-tag green">JavaScript</span>
+            <span class="tl-tag green">Technical Support</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="cta-half">
-      <h3>See what I've built.</h3>
-      <p>Selected projects and production work — including contributions to a live consent management platform.</p>
-      <a href="/projects/" class="btn-outline">View projects →</a>
+
+    <!-- DECIDIO -->
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <div class="tl-role-block">
+            <div class="tl-date">2023 — 2025</div>
+            <div class="tl-role display">Fullstack Developer</div>
+            <div class="tl-company">Decidio GmbH · Truendo Product</div>
+          </div>
+          <div class="tl-meta">
+            <div class="tl-meta-line">Durban, South Africa</div>
+            <div class="tl-meta-line">Production Software</div>
+          </div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-body-label">// Description</div>
+          <div class="tl-desc">
+            I joined Decidio as a support agent on the Truendo consent management platform, then progressed into a developer role working across backend, frontend, and DevOps. I contributed to a live production product serving enterprise clients — deepening my work in Docker, Kubernetes, Go, and TypeScript as I took on more of the stack.
+          </div>
+
+          <div class="tl-body-label">// Responsibilities</div>
+          <div class="tl-responsibilities">
+            <div class="tl-resp"><span class="tl-resp-num">01</span><span>Implemented and maintained full-stack product features</span></div>
+            <div class="tl-resp"><span class="tl-resp-num">02</span><span>Investigated and resolved software defects and production issues</span></div>
+            <div class="tl-resp"><span class="tl-resp-num">03</span><span>Optimised database queries and supported data migrations</span></div>
+            <div class="tl-resp"><span class="tl-resp-num">04</span><span>Assisted with Docker container and infrastructure migrations</span></div>
+            <div class="tl-resp"><span class="tl-resp-num">05</span><span>Supported DevOps operations and CI/CD pipelines</span></div>
+            <div class="tl-resp"><span class="tl-resp-num">06</span><span>Investigated and resolved customer-reported technical issues</span></div>
+          </div>
+
+          <div class="tl-tech">
+            <span class="tl-tag">TypeScript</span>
+            <span class="tl-tag">React</span>
+            <span class="tl-tag">Go</span>
+            <span class="tl-tag">Docker</span>
+            <span class="tl-tag">Kubernetes</span>
+            <span class="tl-tag">AWS</span>
+            <span class="tl-tag">GCP</span>
+            <span class="tl-tag">Jenkins</span>
+            <span class="tl-tag">SQL</span>
+            <span class="tl-tag">RabbitMQ</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRANSITION CALLOUT -->
+    <div class="transition-callout">
+      <div class="tc-label">// Career pivot · 2021 — 2023</div>
+      <div class="tc-text">
+        After several years in the trades, I decided to pursue software. I taught myself the fundamentals through documentation, online resources, and personal projects — building, breaking, and rebuilding until things worked. That work led to <strong>a professional developer role at Decidio</strong>, where I've been able to apply what I learned to real production software.
+      </div>
+    </div>
+
+    <!-- EL-SHADDAI — TRADE -->
+    <div class="tl-item">
+      <div class="tl-dot orange"></div>
+      <div class="tl-card">
+        <div class="tl-header">
+          <div class="tl-role-block">
+            <div class="tl-date orange">2017 — 2022</div>
+            <div class="tl-role display orange">Fitter / Interior Installation</div>
+            <div class="tl-company">El-Shaddai Interiors</div>
+          </div>
+          <div class="tl-meta">
+            <div class="tl-meta-line orange">Durban, South Africa</div>
+            <div class="tl-meta-line orange">Trade Experience</div>
+          </div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-body-label">// Description</div>
+          <div class="tl-desc" style="border-left-color: rgba(255,107,53,0.3);">
+            I started working with my father straight after high school. Over the years I learned the trade from the ground up — handling supplier orders, assembling units, fitting on-site, and coordinating a team. A practical foundation that shaped how I approach problem-solving and quality in any kind of work.
+          </div>
+
+          <div class="tl-body-label">// Responsibilities</div>
+          <div class="tl-responsibilities">
+            <div class="tl-resp"><span class="tl-resp-num orange">01</span><span>Received and processed supplier orders</span></div>
+            <div class="tl-resp"><span class="tl-resp-num orange">02</span><span>Checked order accuracy and completeness</span></div>
+            <div class="tl-resp"><span class="tl-resp-num orange">03</span><span>Categorised pieces based on the units to be built</span></div>
+            <div class="tl-resp"><span class="tl-resp-num orange">04</span><span>Assembled and built interior units</span></div>
+            <div class="tl-resp"><span class="tl-resp-num orange">05</span><span>Fitted and finished units on-site</span></div>
+            <div class="tl-resp"><span class="tl-resp-num orange">06</span><span>Allocated tasks and coordinated the team</span></div>
+          </div>
+
+          <div class="tl-tech">
+            <span class="tl-tag orange">Team Coordination</span>
+            <span class="tl-tag orange">Precision</span>
+            <span class="tl-tag orange">Problem Solving</span>
+            <span class="tl-tag orange">Attention to Detail</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section style="border-top:1px solid var(--line);">
+  <div class="section-head">
+    <h2 class="display">Education &amp; Background</h2>
+    <div class="tag">Formal schooling and the self-taught path into software development.</div>
+  </div>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-icon">🏫</div>
+      <div>
+        <div class="edu-title">High School Diploma</div>
+        <div class="edu-sub">Completed secondary education in Durban, South Africa.</div>
+      </div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-icon highlight">💻</div>
+      <div>
+        <div class="edu-title highlight">Self-Taught Developer</div>
+        <div class="edu-sub">Learned software development independently through documentation, online resources, and hands-on personal projects — then applied that foundation to a professional production role.</div>
+      </div>
     </div>
   </div>
+</section>
 
-</div>
+<!-- CTA -->
+<section class="cta-strip">
+  <h2 class="display">Open to<br>opportunities.</h2>
+  <a class="btn" href="/contact/">Get in touch →</a>
+  <p class="cta-sub">
+    Or reach me directly at <a href="mailto:miguelmarcoramcharan@gmail.com">miguelmarcoramcharan@gmail.com</a>
+  </p>
+</section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-copy">© <span id="year">2025</span> <span>Marco Ramcharan</span> · Full Stack Developer</div>
-  <div class="footer-links">
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/projects/">Projects</a>
-    <a href="/career/">Career</a>
-    <a href="/contact/">Contact</a>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="display footer-logo">MARCO</div>
+      <p class="footer-tagline">Self-taught full-stack developer from Durban. Contributed to production software at Decidio GmbH on the Truendo consent management platform.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/marcoramcharan" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Marco Ramcharan on GitHub">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/career/">Career</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Projects</h4>
+      <ul>
+        <li><a href="https://truendo.com" target="_blank" rel="noopener noreferrer">Truendo</a></li>
+        <li><a href="https://staticpengu.vercel.app" target="_blank" rel="noopener noreferrer">Static Pengu</a></li>
+        <li><a href="https://www.elshaddaiinteriors.co.za" target="_blank" rel="noopener noreferrer">El-Shaddai Interiors</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Get in touch</h4>
+      <p>
+        <a href="mailto:miguelmarcoramcharan@gmail.com">miguelmarcoramcharan@gmail.com</a><br>
+        Durban, KwaZulu-Natal
+      </p>
+      <a href="mailto:miguelmarcoramcharan@gmail.com" class="hire-btn">Hire Me ↗</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© <span id="year">2025</span> <span>Marco Ramcharan</span> · Full Stack Developer</div>
+    <div class="footer-bottom-links">
+      <a href="/about/">About</a>
+      <a href="/projects/">Projects</a>
+      <a href="/contact/">Contact</a>
+    </div>
   </div>
 </footer>
 
 <script>
-  // HAMBURGER / MOBILE MENU
-  const hamburger = document.getElementById('hamburger');
+  // MOBILE MENU
+  const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobileMenu');
 
-  function toggleMenu(forceClose = false) {
-    const isOpen = mobileMenu.classList.contains('open');
-    if (isOpen || forceClose) {
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
-      mobileMenu.setAttribute('aria-hidden', 'true');
-      hamburger.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('menu-open');
-    } else {
-      hamburger.classList.add('open');
-      mobileMenu.classList.add('open');
-      mobileMenu.setAttribute('aria-hidden', 'false');
-      hamburger.setAttribute('aria-expanded', 'true');
-      document.body.classList.add('menu-open');
-    }
+  function setMenu(open) {
+    mobileMenu.classList.toggle('open', open);
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    mobileMenu.setAttribute('aria-hidden', String(!open));
+    document.body.style.overflow = open ? 'hidden' : '';
   }
 
-  hamburger.addEventListener('click', () => toggleMenu());
-  document.querySelectorAll('.mobile-nav-link').forEach(link => {
-    link.addEventListener('click', () => toggleMenu(true));
-  });
+  burger.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open')));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) toggleMenu(true);
-  });
-
-  // SCROLL REVEAL — with fail-safe
-  const revealEls = document.querySelectorAll('.reveal, .job-card, .transition-callout, .edu-card');
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.06 });
-    revealEls.forEach(el => observer.observe(el));
-  } else {
-    revealEls.forEach(el => el.classList.add('visible'));
-  }
-
-  // ACTIVE YEAR NAV on scroll
-  const navItems = document.querySelectorAll('.year-nav-item');
-  const sections = ['job-decidio', 'job-fitter', 'edu'];
-  window.addEventListener('scroll', () => {
-    let current = sections[0];
-    sections.forEach(id => {
-      const el = document.getElementById(id);
-      if (el && window.scrollY >= el.offsetTop - 200) current = id;
-    });
-    navItems.forEach(a => {
-      const href = a.getAttribute('href').replace('#', '');
-      a.classList.toggle('active', href === current);
-    });
+    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+      setMenu(false);
+      burger.focus();
+    }
   });
 
   // DYNAMIC YEAR
