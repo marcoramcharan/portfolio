@@ -4,45 +4,79 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Marco Ramcharan — Contact</title>
-      <link rel="icon" type="image/png" href="/images/favicon.png">
+<meta name="description" content="Contact Marco Ramcharan — self-taught full-stack developer from Durban, South Africa. Open to full-time software development roles, contract work, and interesting technical projects.">
+<link rel="icon" type="image/png" href="/images/favicon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#0a0a0a;--bg-2:#121212;--line:#2a2a2a;--txt:#f5f3ee;--txt-dim:#9a968d;--accent:#d8ff3e;--green:#00ffa3;}
+  :root{
+    --bg:#0a0a0a;
+    --bg-2:#121212;
+    --line:#2a2a2a;
+    --txt:#f5f3ee;
+    --txt-dim:#9a968d;
+    --accent:#d8ff3e;
+    --green:#00ffa3;
+  }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{background:var(--bg);color:var(--txt);font-family:'Space Grotesk',sans-serif;overflow-x:hidden;}
   .display{font-family:'Bebas Neue',sans-serif;letter-spacing:0.04em;}
   a{text-decoration:none;color:inherit;}
 
-  nav{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:28px 6vw;background:linear-gradient(to bottom,rgba(10,10,10,0.92) 0%,transparent 100%);backdrop-filter:blur(10px);border-bottom:1px solid rgba(42,42,42,0.5);}
-  .logo{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.08em;color:var(--txt);}
+  /* NAV */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:28px 6vw;
+    background:linear-gradient(to bottom,rgba(10,10,10,0.92) 0%,transparent 100%);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(42,42,42,0.5);
+  }
+  .logo{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.08em;color:var(--txt);text-decoration:none;}
   nav ul{display:flex;gap:36px;list-style:none;}
   nav a{color:var(--txt-dim);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
   nav a:hover,nav a.active{color:var(--accent);}
-  .nav-cta{font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;border:1px solid var(--accent);color:var(--accent);padding:9px 22px;transition:background 0.2s,color 0.2s;}
+  .nav-cta{
+    font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:0.14em;
+    text-transform:uppercase;font-weight:700;border:1px solid var(--accent);
+    color:var(--accent);padding:9px 22px;transition:background 0.2s,color 0.2s;
+  }
   .nav-cta:hover{background:var(--accent);color:var(--bg);}
-  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;z-index:70;}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;z-index:70;padding:6px;}
   .burger span{width:26px;height:2px;background:var(--txt);display:block;transition:transform 0.3s,opacity 0.3s;}
   .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
   .burger.open span:nth-child(2){opacity:0;}
   .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-  .mobile-menu{position:fixed;inset:0;background:var(--bg);z-index:55;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:6vw;gap:20px;transform:translateY(-100%);transition:transform 0.4s ease,visibility 0.4s;visibility:hidden;}
+
+  /* MOBILE MENU */
+  .mobile-menu{
+    position:fixed;inset:0;background:var(--bg);z-index:55;
+    display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
+    padding:6vw;gap:20px;
+    transform:translateY(-100%);
+    transition:transform 0.4s ease,visibility 0.4s;
+    visibility:hidden;
+  }
   .mobile-menu.open{transform:translateY(0);visibility:visible;}
   .mobile-menu a{color:var(--txt);font-family:'Bebas Neue',sans-serif;font-size:13vw;text-transform:uppercase;line-height:1;}
   .mobile-menu a:hover{color:var(--accent);}
   .mobile-menu .mm-sub{margin-top:36px;display:flex;gap:20px;}
   .mobile-menu .mm-sub a{font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:0.14em;}
-  @media(max-width:800px){nav ul,.nav-cta{display:none;}.burger{display:flex;}}
+
+  @media(max-width:800px){
+    nav ul,.nav-cta{display:none;}
+    .burger{display:flex;}
+  }
 
   /* PAGE HEADER */
   .page-header{padding:160px 6vw 80px;border-bottom:1px solid var(--line);}
   .eyebrow{font-size:13px;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;}
   .page-header h1{font-size:clamp(56px,12vw,180px);line-height:0.9;text-transform:uppercase;margin-bottom:40px;}
   .page-header-sub{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;}
-  .page-header-sub p{max-width:480px;font-size:17px;color:var(--txt-dim);line-height:1.6;}
+  .page-header-sub p{max-width:520px;font-size:17px;color:var(--txt-dim);line-height:1.65;}
 
   /* CONTACT SECTION */
   .contact-section{padding:100px 6vw;border-bottom:1px solid var(--line);}
@@ -52,31 +86,70 @@
   .contact-link{
     display:flex;align-items:center;justify-content:space-between;
     padding:28px 32px;border:1px solid var(--line);background:var(--bg-2);
-    font-size:15px;color:var(--txt);transition:border-color 0.2s,background 0.2s,color 0.2s;
+    font-size:15px;color:var(--txt);
+    transition:border-color 0.2s,background 0.2s,color 0.2s;
+    position:relative;
   }
-  .contact-link:hover{border-color:var(--accent);background:rgba(216,255,62,0.04);color:var(--accent);}
+  .contact-link.static{cursor:default;}
+  a.contact-link:hover{border-color:var(--accent);background:rgba(216,255,62,0.04);color:var(--accent);}
   .contact-link-label{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--txt-dim);margin-bottom:4px;}
-  .contact-link-arrow{font-size:20px;color:var(--txt-dim);transition:color 0.2s,transform 0.2s;}
-  .contact-link:hover .contact-link-arrow{color:var(--accent);transform:translateX(4px);}
+  .contact-link-value{
+    font-family:'Space Grotesk',sans-serif;
+    word-break:break-word;
+    line-height:1.35;
+  }
+  .contact-link-arrow{font-size:20px;color:var(--txt-dim);transition:color 0.2s,transform 0.2s;margin-left:16px;}
+  a.contact-link:hover .contact-link-arrow{color:var(--accent);transform:translateX(4px);}
+
+  /* COPY BUTTON */
+  .copy-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:transparent;border:1px solid var(--line);color:var(--txt-dim);
+    font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:0.14em;
+    text-transform:uppercase;font-weight:700;
+    padding:8px 14px;cursor:pointer;
+    transition:border-color 0.2s,color 0.2s,background 0.2s;
+    margin-top:8px;
+  }
+  .copy-btn:hover,.copy-btn:focus-visible{border-color:var(--accent);color:var(--accent);}
+  .copy-btn.copied{border-color:var(--green);color:var(--green);background:rgba(0,255,163,0.05);}
 
   /* STATUS CARD */
   .status-card{border:1px solid var(--line);background:var(--bg-2);padding:40px;}
-  .status-dot{width:8px;height:8px;background:var(--green);border-radius:50%;display:inline-block;animation:pulse 2s infinite;margin-right:10px;}
-  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(0,255,163,0.4);}50%{box-shadow:0 0 0 6px rgba(0,255,163,0);}}
-  .status-badge{display:flex;align-items:center;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:var(--green);margin-bottom:32px;}
-  .status-card h3{font-family:'Bebas Neue',sans-serif;font-size:36px;text-transform:uppercase;color:var(--txt);margin-bottom:16px;}
+  .status-dot{width:8px;height:8px;background:var(--green);border-radius:50%;display:inline-block;margin-right:10px;animation:pulse 2.4s infinite;}
+  @keyframes pulse{
+    0%,100%{box-shadow:0 0 0 0 rgba(0,255,163,0.4);}
+    50%{box-shadow:0 0 0 6px rgba(0,255,163,0);}
+  }
+  .status-badge{
+    display:flex;align-items:center;
+    font-size:12px;letter-spacing:0.15em;text-transform:uppercase;
+    color:var(--green);margin-bottom:32px;
+  }
+  .status-card h3{
+    font-family:'Bebas Neue',sans-serif;font-size:36px;text-transform:uppercase;
+    color:var(--txt);margin-bottom:16px;line-height:1;
+  }
   .status-card p{font-size:15px;color:var(--txt-dim);line-height:1.65;margin-bottom:28px;}
   .status-meta{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);}
-  .meta-row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);font-size:13px;}
-  .meta-key{color:var(--txt-dim);letter-spacing:0.1em;text-transform:uppercase;font-size:11px;}
+  .meta-row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);font-size:13px;gap:16px;}
+  .meta-key{color:var(--txt-dim);letter-spacing:0.1em;text-transform:uppercase;font-size:11px;flex-shrink:0;}
   .meta-val{color:var(--txt);text-align:right;}
 
   /* CTA */
   .cta{text-align:center;padding:120px 6vw;border-bottom:1px solid var(--line);}
   .cta h2{font-size:clamp(40px,9vw,140px);text-transform:uppercase;line-height:0.95;margin-bottom:40px;}
-  .btn{display:inline-flex;align-items:center;gap:12px;background:var(--accent);color:#0a0a0a;padding:18px 40px;border-radius:100px;font-size:14px;letter-spacing:0.15em;text-transform:uppercase;font-weight:700;transition:transform 0.25s ease;}
-  .btn:hover{transform:scale(1.05);}
+  .btn{
+    display:inline-flex;align-items:center;gap:12px;
+    background:var(--accent);color:#0a0a0a;
+    padding:18px 40px;border-radius:100px;
+    font-size:14px;letter-spacing:0.15em;text-transform:uppercase;font-weight:700;
+    transition:transform 0.25s ease,box-shadow 0.25s ease;
+  }
+  .btn:hover{transform:scale(1.05);box-shadow:0 0 30px rgba(216,255,62,0.25);}
   .cta-sub{color:var(--txt-dim);font-size:15px;margin-top:24px;}
+  .cta-sub a{color:var(--txt);border-bottom:1px solid var(--line);transition:color 0.2s,border-color 0.2s;}
+  .cta-sub a:hover{color:var(--accent);border-color:var(--accent);}
 
   /* FOOTER */
   footer{border-top:1px solid var(--line);padding:80px 6vw 36px;background:var(--bg-2);}
@@ -91,7 +164,8 @@
   .footer-col a{color:var(--txt-dim);font-size:13px;transition:color 0.2s;}
   .footer-col a:hover{color:var(--accent);}
   .footer-col p{color:var(--txt-dim);font-size:13px;line-height:1.7;}
-  .hire-btn{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;padding:9px 20px;transition:background 0.2s,color 0.2s;margin-top:4px;}
+  .footer-col p a{color:var(--txt);}
+  .hire-btn{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;padding:9px 20px;transition:background 0.2s,color 0.2s;margin-top:12px;}
   .hire-btn:hover{background:var(--accent);color:var(--bg);}
   .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
   .footer-copy{font-size:12px;color:var(--txt-dim);}
@@ -100,86 +174,109 @@
   .footer-bottom-links a{font-size:11px;color:var(--txt-dim);letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
   .footer-bottom-links a:hover{color:var(--accent);}
 
-  @media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:48px;}.footer-top{grid-template-columns:1fr 1fr;gap:36px;}.footer-brand{grid-column:1/-1;}}
-  @media(max-width:560px){.footer-top{grid-template-columns:1fr;}}
-  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  @media(max-width:900px){
+    .contact-grid{grid-template-columns:1fr;gap:48px;}
+    .footer-top{grid-template-columns:1fr 1fr;gap:36px;}
+    .footer-brand{grid-column:1/-1;}
+  }
+  @media(max-width:560px){
+    .footer-top{grid-template-columns:1fr;}
+    .page-header{padding:130px 6vw 60px;}
+    .contact-section{padding:64px 6vw;}
+    .cta{padding:80px 6vw;}
+  }
+
+  /* REDUCED MOTION */
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .status-dot{animation:none;}
+    *{transition:none !important;}
+  }
+
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
 </style>
 </head>
 <body>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="contact.html">Contact</a>
-  <div class="mm-sub">
-    <a href="https://github.com/marcoramcharan" target="_blank" rel="noopener">GitHub</a>
-  </div>
-</div>
-
+<!-- NAV -->
 <nav>
-  <div class="logo display">MARCO</div>
+  <a href="/" class="logo display">MARCO</a>
   <ul>
     <li><a href="/">Home</a></li>
     <li><a href="/about/">About</a></li>
-    <li><a href="/contact/">Contact</a></li>
     <li><a href="/projects/">Projects</a></li>
+    <li><a href="/career/">Career</a></li>
+    <li><a href="/contact/" class="active">Contact</a></li>
   </ul>
-  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+  <a href="mailto:miguelmarcoramcharan@gmail.com" class="nav-cta">Hire Me</a>
+  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
+<!-- MOBILE MENU (single, correct instance) -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="/">Home</a>
   <a href="/about/">About</a>
-  <a href="/contact/">Contact</a>
   <a href="/projects/">Projects</a>
+  <a href="/career/">Career</a>
+  <a href="/contact/">Contact</a>
   <div class="mm-sub">
-    <a href="https://github.com/marcoramcharan" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://github.com/marcoramcharan" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="mailto:miguelmarcoramcharan@gmail.com">Email</a>
   </div>
 </div>
 
 <header class="page-header">
-  <div class="eyebrow">Let's work together</div>
+  <div class="eyebrow">Contact</div>
   <h1 class="display">Get in<br>touch.</h1>
   <div class="page-header-sub">
-    <p>Open to full-time roles, freelance projects, and interesting problems. One email is all it takes.</p>
+    <p>Open to full-time software development roles, contract and freelance work, and interesting technical collaborations. If you'd like to talk, send an email — that's the fastest way to reach me.</p>
   </div>
 </header>
 
 <section class="contact-section">
   <div class="contact-grid">
     <div class="contact-links">
+
       <a href="mailto:miguelmarcoramcharan@gmail.com" class="contact-link">
         <div>
           <div class="contact-link-label">Email</div>
-          <div>miguelmarcoramcharan@gmail.com</div>
+          <div class="contact-link-value">miguelmarcoramcharan@gmail.com</div>
         </div>
-        <span class="contact-link-arrow">↗</span>
+        <span class="contact-link-arrow" aria-hidden="true">↗</span>
       </a>
-      <a href="https://github.com/marcoramcharan" target="_blank" rel="noopener" class="contact-link">
+
+      <a href="https://github.com/marcoramcharan" target="_blank" rel="noopener noreferrer" class="contact-link">
         <div>
           <div class="contact-link-label">GitHub</div>
-          <div>github.com/marcoramcharan</div>
+          <div class="contact-link-value">github.com/marcoramcharan</div>
         </div>
-        <span class="contact-link-arrow">↗</span>
+        <span class="contact-link-arrow" aria-hidden="true">↗</span>
       </a>
-      <div class="contact-link" style="pointer-events:none;opacity:0.5;">
+
+      <div class="contact-link static">
         <div>
           <div class="contact-link-label">Location</div>
-          <div>Durban, South Africa</div>
+          <div class="contact-link-value">Durban, South Africa</div>
         </div>
-        <span>📍</span>
+        <span aria-hidden="true">📍</span>
       </div>
+
+      <div style="margin-top:8px;">
+        <button type="button" class="copy-btn" id="copyEmailBtn" data-email="miguelmarcoramcharan@gmail.com">
+          <span aria-hidden="true">📋</span>
+          <span id="copyEmailLabel">Copy email address</span>
+        </button>
+      </div>
+
     </div>
 
     <div class="status-card">
-      <div class="status-badge"><span class="status-dot"></span>Available for work</div>
-      <h3 class="display">Open to opportunities</h3>
-      <p>I'm currently in transition and looking for the right role. Full-time, contract, or freelance — if you've got something interesting, let's talk.</p>
+      <div class="status-badge"><span class="status-dot" aria-hidden="true"></span>Open to opportunities</div>
+      <h3 class="display">Available for hire.</h3>
+      <p>I'm currently looking for a full-time software development role. Open to contract and freelance work as well, and happy to discuss interesting technical problems either way.</p>
       <div class="status-meta">
-        <div class="meta-row"><span class="meta-key">Response time</span><span class="meta-val">Within 1 business day</span></div>
         <div class="meta-row"><span class="meta-key">Role type</span><span class="meta-val">Full-time · Contract · Freelance</span></div>
         <div class="meta-row"><span class="meta-key">Location</span><span class="meta-val">Durban · Remote · Hybrid</span></div>
         <div class="meta-row" style="border-bottom:none;"><span class="meta-key">Status</span><span class="meta-val" style="color:var(--green);">Open</span></div>
@@ -191,17 +288,19 @@
 <section class="cta">
   <h2 class="display">Don't be<br>a stranger.</h2>
   <a class="btn" href="mailto:miguelmarcoramcharan@gmail.com">Send me an email →</a>
-  <p class="cta-sub">miguelmarcoramcharan@gmail.com</p>
+  <p class="cta-sub">
+    Or reach me directly at <a href="mailto:miguelmarcoramcharan@gmail.com">miguelmarcoramcharan@gmail.com</a>
+  </p>
 </section>
 
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
       <div class="display footer-logo">MARCO</div>
-      <p class="footer-tagline">Carpenter turned engineer. Building things that last — in wood and in code.</p>
+      <p class="footer-tagline">Self-taught full-stack developer from Durban. Contributed to production software at Decidio GmbH on the Truendo consent management platform.</p>
       <div class="footer-socials">
-        <a href="https://github.com/marcoramcharan" target="_blank" rel="noopener" class="footer-social">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        <a href="https://github.com/marcoramcharan" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Marco Ramcharan on GitHub">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
         </a>
       </div>
     </div>
@@ -209,49 +308,91 @@
       <h4>Navigate</h4>
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/career/">Career</a></li>
+        <li><a href="/contact/">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Projects</h4>
+      <h4>Elsewhere</h4>
       <ul>
-        <li><a href="https://truendo.com" target="_blank" rel="noopener">Truendo</a></li>
-        <li><a href="https://casino-alpha-two.vercel.app/" target="_blank" rel="noopener">Casino</a></li>
-        <li><a href="https://hirewave-frontend.vercel.app/" target="_blank" rel="noopener">Hirewave</a></li>
-        <li><a href="https://nexus-theta-ivory.vercel.app" target="_blank" rel="noopener">Nexus</a></li>
+        <li><a href="https://github.com/marcoramcharan" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://truendo.com" target="_blank" rel="noopener noreferrer">Truendo</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Get in touch</h4>
-      <p>miguelmarcoramcharan@gmail.com<br>Durban, KwaZulu-Natal<br>Open to opportunities</p><br>
+      <p>
+        <a href="mailto:miguelmarcoramcharan@gmail.com">miguelmarcoramcharan@gmail.com</a><br>
+        Durban, KwaZulu-Natal
+      </p>
       <a href="mailto:miguelmarcoramcharan@gmail.com" class="hire-btn">Hire Me ↗</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2025 <span>Marco Ramcharan</span> · Full Stack Developer & Ethical Hacker</div>
+    <div class="footer-copy">© <span id="year">2025</span> <span>Marco Ramcharan</span> · Full Stack Developer</div>
     <div class="footer-bottom-links">
-      <a href="/projects">Projects</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
+      <a href="/about/">About</a>
+      <a href="/projects/">Projects</a>
+      <a href="/career/">Career</a>
     </div>
   </div>
 </footer>
 
 <script>
+  // MOBILE MENU
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobileMenu');
-  burger.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('open');
-    burger.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open);
+
+  function setMenu(open) {
+    mobileMenu.classList.toggle('open', open);
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
     document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  burger.addEventListener('click', () => {
+    setMenu(!mobileMenu.classList.contains('open'));
   });
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    mobileMenu.classList.remove('open'); burger.classList.remove('open');
-    burger.setAttribute('aria-expanded','false'); document.body.style.overflow = '';
-  }));
+
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => setMenu(false));
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+      setMenu(false);
+      burger.focus();
+    }
+  });
+
+  // COPY EMAIL
+  const copyBtn = document.getElementById('copyEmailBtn');
+  const copyLabel = document.getElementById('copyEmailLabel');
+  if (copyBtn && navigator.clipboard) {
+    copyBtn.addEventListener('click', async () => {
+      const email = copyBtn.dataset.email;
+      try {
+        await navigator.clipboard.writeText(email);
+        copyBtn.classList.add('copied');
+        copyLabel.textContent = 'Copied to clipboard';
+        setTimeout(() => {
+          copyBtn.classList.remove('copied');
+          copyLabel.textContent = 'Copy email address';
+        }, 2000);
+      } catch (err) {
+        // Fallback: select the text for manual copy
+        copyLabel.textContent = 'Press Ctrl/Cmd+C to copy';
+      }
+    });
+  } else if (copyBtn) {
+    // Hide button if clipboard API isn't available
+    copyBtn.style.display = 'none';
+  }
+
+  // DYNAMIC YEAR
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>

@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marco Ramcharan — Career</title>
+<meta name="description" content="Marco Ramcharan's career journey — from interior fitter at El-Shaddai Interiors to full-stack developer at Decidio GmbH on the Truendo consent management platform.">
+<link rel="icon" type="image/png" href="/images/favicon.png">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,7 +34,6 @@
     font-family: 'DM Mono', monospace;
     font-weight: 300;
     overflow-x: hidden;
-    cursor: none;
   }
   body.menu-open { overflow: hidden; }
 
@@ -50,12 +51,6 @@
     mask-image: radial-gradient(ellipse 60% 60% at 50% 0%, black, transparent);
   }
 
-  /* CURSOR */
-  .cursor { position: fixed; width: 10px; height: 10px; background: var(--cyan); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); mix-blend-mode: screen; transition: width .2s, height .2s; }
-  .cursor-ring { position: fixed; width: 36px; height: 36px; border: 1px solid rgba(0,212,255,0.4); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width .3s, height .3s, border-color .2s; }
-  .cursor.hover { width: 14px; height: 14px; }
-  .cursor-ring.hover { width: 48px; height: 48px; border-color: var(--cyan); }
-
   /* ─── NAV ─── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 500;
@@ -71,7 +66,7 @@
   .nav-links a.active, .nav-links a:hover { color: var(--cyan); }
   .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--cyan); transition: width .25s; }
   .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-  .nav-cta { background: var(--cyan); border: none; color: var(--bg); font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 1.25rem; cursor: none; transition: box-shadow .2s, transform .2s; text-decoration: none; font-weight: 400; display: inline-block; }
+  .nav-cta { background: var(--cyan); border: none; color: var(--bg); font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.5rem 1.25rem; transition: box-shadow .2s, transform .2s; text-decoration: none; font-weight: 400; display: inline-block; }
   .nav-cta:hover { box-shadow: 0 0 24px var(--cyan-glow); transform: translateY(-1px); }
 
   /* ─── HAMBURGER BUTTON ─── */
@@ -166,14 +161,28 @@
   .page-hero h1 span { color: var(--cyan); }
   .hero-right { padding-bottom: 0.5rem; }
   .hero-right p { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 1.05rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem; }
-  .hero-stats { display: flex; gap: 2rem; }
+  .hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
   .hstat-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.8rem; color: var(--white); line-height: 1; }
   .hstat-num span { color: var(--cyan); }
   .hstat-label { font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.2rem; }
 
+  /* STATUS PILL */
+  .status-pill {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--green); border: 1px solid rgba(0,255,163,0.25);
+    background: rgba(0,255,163,0.05);
+    padding: 0.35rem 0.75rem; margin-bottom: 1rem;
+  }
+  .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+
   /* SKILLS SNAPSHOT */
-  .skills-snapshot { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 1.5rem; border: 1px solid var(--border); background: var(--bg2); margin-bottom: 4rem; opacity: 0; animation: fadeUp .6s .25s forwards; }
-  .snap-label { width: 100%; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+  .skills-snapshot { padding: 1.5rem; border: 1px solid var(--border); background: var(--bg2); margin-bottom: 4rem; opacity: 0; animation: fadeUp .6s .25s forwards; }
+  .snap-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+  .snap-group { margin-bottom: 1rem; }
+  .snap-group:last-child { margin-bottom: 0; }
+  .snap-group-label { font-size: 0.55rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.5rem; opacity: 0.7; }
+  .snap-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
   .snap-pill { font-size: 0.65rem; letter-spacing: 0.06em; padding: 0.35rem 0.85rem; border: 1px solid var(--border); background: var(--surface); color: var(--text); transition: border-color .2s, color .2s, background .2s; }
   .snap-pill:hover { border-color: var(--cyan); color: var(--cyan); background: var(--cyan-dim); }
   .snap-pill.core { border-color: rgba(0,212,255,0.3); color: var(--white); background: var(--cyan-dim); }
@@ -183,7 +192,7 @@
 
   /* STICKY YEAR NAV */
   .year-nav { position: sticky; top: 6rem; height: fit-content; display: flex; flex-direction: column; gap: 0; opacity: 0; animation: fadeUp .6s .3s forwards; }
-  .year-nav-item { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 0.6rem 0.75rem; border-left: 2px solid var(--border); cursor: none; transition: color .2s, border-color .2s; text-decoration: none; display: block; }
+  .year-nav-item { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); padding: 0.6rem 0.75rem; border-left: 2px solid var(--border); transition: color .2s, border-color .2s; text-decoration: none; display: block; }
   .year-nav-item.active, .year-nav-item:hover { color: var(--cyan); border-color: var(--cyan); }
   .year-nav-item .yn-period { display: block; font-size: 0.55rem; color: var(--muted); margin-top: 0.1rem; }
 
@@ -201,14 +210,12 @@
   .job-topbar { display: flex; align-items: stretch; border-bottom: 1px solid var(--border); }
   .job-accent { width: 4px; flex-shrink: 0; background: var(--cyan); }
   .job-accent.orange { background: var(--orange); }
-  .job-header { flex: 1; padding: 1.5rem 1.75rem; display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+  .job-header { flex: 1; padding: 1.5rem 1.75rem; display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
   .job-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--cyan); margin-bottom: 0.2rem; transition: color .2s; }
   .job-company { font-size: 0.75rem; color: var(--white); letter-spacing: 0.04em; }
   .job-meta { text-align: right; flex-shrink: 0; }
   .job-location { font-size: 0.62rem; color: var(--muted); margin-bottom: 0.3rem; }
-  .job-location::before { content: '📍 '; }
   .job-period { font-size: 0.62rem; color: var(--muted); }
-  .job-period::before { content: '📅 '; }
   .job-body { padding: 1.75rem; }
   .job-section-title { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.85rem; display: flex; align-items: center; gap: 0.6rem; }
   .job-section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
@@ -244,13 +251,13 @@
   .cta-half:hover { background: var(--surface); }
   .cta-half h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--white); margin-bottom: 0.5rem; }
   .cta-half p { font-size: 0.72rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.5rem; }
-  .btn-cyan { background: var(--cyan); color: var(--bg); font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.75rem 1.75rem; border: none; cursor: none; text-decoration: none; transition: box-shadow .2s, transform .2s; display: inline-block; }
+  .btn-cyan { background: var(--cyan); color: var(--bg); font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.75rem 1.75rem; border: none; text-decoration: none; transition: box-shadow .2s, transform .2s; display: inline-block; }
   .btn-cyan:hover { box-shadow: 0 0 24px var(--cyan-glow); transform: translateY(-1px); }
-  .btn-outline { background: transparent; color: var(--white); font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.75rem 1.75rem; border: 1px solid var(--border); cursor: none; text-decoration: none; transition: border-color .2s, color .2s; display: inline-block; }
+  .btn-outline { background: transparent; color: var(--white); font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.75rem 1.75rem; border: 1px solid var(--border); text-decoration: none; transition: border-color .2s, color .2s; display: inline-block; }
   .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
 
   /* FOOTER */
-  footer { padding: 2rem 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: var(--bg2); position: relative; z-index: 1; }
+  footer { padding: 2rem 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; background: var(--bg2); position: relative; z-index: 1; flex-wrap: wrap; gap: 1rem; }
   .footer-copy { font-size: 0.65rem; color: var(--muted); }
   .footer-copy span { color: var(--cyan); }
   .footer-links { display: flex; gap: 2rem; }
@@ -275,26 +282,34 @@
     .career-cta { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 1rem; padding: 1.5rem; }
     .mobile-menu { padding: 5rem 1.5rem 3rem; }
+    .job-meta { text-align: left; }
   }
   @media (max-width: 600px) {
     .resp-grid { grid-template-columns: 1fr; }
   }
+
+  /* REDUCED MOTION */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+    .job-card, .transition-callout, .edu-card { opacity: 1 !important; transform: none !important; }
+  }
+
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
 </style>
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 <div class="grid-bg"></div>
 
 <!-- FULLSCREEN MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <ul class="mobile-menu-nav">
     <li><a href="/" class="mobile-nav-link"><span>Home</span><span class="mobile-link-num">01</span></a></li>
-    <li><a href="/about" class="mobile-nav-link"><span>About</span><span class="mobile-link-num">02</span></a></li>
-    <li><a href="/projects" class="mobile-nav-link"><span>Projects</span><span class="mobile-link-num">03</span></a></li>
-    <li><a href="/career" class="mobile-nav-link"><span>Career</span><span class="mobile-link-num">04</span></a></li>
-    <li><a href="/contact" class="mobile-nav-link"><span>Contact</span><span class="mobile-link-num">05</span></a></li>
+    <li><a href="/about/" class="mobile-nav-link"><span>About</span><span class="mobile-link-num">02</span></a></li>
+    <li><a href="/projects/" class="mobile-nav-link"><span>Projects</span><span class="mobile-link-num">03</span></a></li>
+    <li><a href="/career/" class="mobile-nav-link"><span>Career</span><span class="mobile-link-num">04</span></a></li>
+    <li><a href="/contact/" class="mobile-nav-link"><span>Contact</span><span class="mobile-link-num">05</span></a></li>
   </ul>
   <div class="mobile-menu-footer">
     <a href="mailto:miguelmarcoramcharan@gmail.com" class="hire-btn">Hire Me</a>
@@ -308,13 +323,13 @@
 <nav>
   <a href="/" class="nav-logo">Marco <span>R.</span></a>
   <ul class="nav-links">
-    <li><a href="/about">About</a></li>
-    <li><a href="/projects">Projects</a></li>
-    <li><a href="/career">Career</a></li>
-    <li><a href="/contact">Contact</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/projects/">Projects</a></li>
+    <li><a href="/career/" class="active">Career</a></li>
+    <li><a href="/contact/">Contact</a></li>
   </ul>
   <a href="mailto:miguelmarcoramcharan@gmail.com" class="nav-cta">Hire Me</a>
-  <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+  <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
     <span></span>
     <span></span>
     <span></span>
@@ -331,11 +346,12 @@
       <h1>The full <span>journey.</span></h1>
     </div>
     <div class="hero-right">
-      <p>From assembling furniture in Durban to deploying production software for enterprise clients. Every step taught me something the next one needed.</p>
+      <div class="status-pill"><span class="status-dot"></span>Open to opportunities</div>
+      <p>From assembling furniture in Durban to contributing to production software for enterprise clients. Every step taught me something the next one needed.</p>
       <div class="hero-stats">
-        <div><div class="hstat-num">9<span>+</span></div><div class="hstat-label">Years Working</div></div>
+        <div><div class="hstat-num">9<span>+</span></div><div class="hstat-label">Years in the Workforce</div></div>
         <div><div class="hstat-num">2</div><div class="hstat-label">Industries</div></div>
-        <div><div class="hstat-num" style="color:var(--green)">●</div><div class="hstat-label">Currently Active</div></div>
+        <div><div class="hstat-num">1</div><div class="hstat-label">Production Product</div></div>
       </div>
     </div>
   </div>
@@ -343,21 +359,45 @@
   <!-- SKILLS SNAPSHOT -->
   <div class="skills-snapshot">
     <div class="snap-label">// Current tech stack</div>
-    <span class="snap-pill core">TypeScript</span>
-    <span class="snap-pill core">React</span>
-    <span class="snap-pill core">Node.js</span>
-    <span class="snap-pill core">Go</span>
-    <span class="snap-pill core">SQL</span>
-    <span class="snap-pill">Docker</span>
-    <span class="snap-pill">Kubernetes</span>
-    <span class="snap-pill">AWS</span>
-    <span class="snap-pill">GCP</span>
-    <span class="snap-pill">Jenkins</span>
-    <span class="snap-pill">RabbitMQ</span>
-    <span class="snap-pill">Python</span>
-    <span class="snap-pill">NoSQL</span>
-    <span class="snap-pill">HTML/CSS</span>
-    <span class="snap-pill">VSCode</span>
+
+    <div class="snap-group">
+      <div class="snap-group-label">Application Development</div>
+      <div class="snap-pills">
+        <span class="snap-pill core">TypeScript</span>
+        <span class="snap-pill core">React</span>
+        <span class="snap-pill">HTML / CSS</span>
+      </div>
+    </div>
+
+    <div class="snap-group">
+      <div class="snap-group-label">Backend &amp; APIs</div>
+      <div class="snap-pills">
+        <span class="snap-pill core">Node.js</span>
+        <span class="snap-pill core">Go</span>
+        <span class="snap-pill">Python</span>
+        <span class="snap-pill">REST APIs</span>
+      </div>
+    </div>
+
+    <div class="snap-group">
+      <div class="snap-group-label">Databases &amp; Messaging</div>
+      <div class="snap-pills">
+        <span class="snap-pill core">SQL</span>
+        <span class="snap-pill">PostgreSQL</span>
+        <span class="snap-pill">RabbitMQ</span>
+      </div>
+    </div>
+
+    <div class="snap-group">
+      <div class="snap-group-label">Infrastructure &amp; DevOps</div>
+      <div class="snap-pills">
+        <span class="snap-pill core">Docker</span>
+        <span class="snap-pill core">Kubernetes</span>
+        <span class="snap-pill">AWS</span>
+        <span class="snap-pill">GCP</span>
+        <span class="snap-pill">Jenkins</span>
+      </div>
+    </div>
   </div>
 
   <!-- TIMELINE GRID -->
@@ -367,15 +407,15 @@
     <div class="year-nav">
       <a href="#job-decidio" class="year-nav-item active">
         Decidio
-        <span class="yn-period">Jan 2023 — Present</span>
+        <span class="yn-period">2023 — 2025</span>
       </a>
       <a href="#job-fitter" class="year-nav-item">
         El-Shaddai Interiors
-        <span class="yn-period">Jan 2016 — Dec 2022</span>
+        <span class="yn-period">2016 — 2022</span>
       </a>
       <a href="#edu" class="year-nav-item">
         Education
-        <span class="yn-period">Completed</span>
+        <span class="yn-period">Self-taught</span>
       </a>
     </div>
 
@@ -394,27 +434,27 @@
                 <div class="job-company">Decidio GmbH · Truendo Product</div>
               </div>
               <div class="job-meta">
-                <div class="job-location">Durban, South Africa</div>
-                <div class="job-period">Jan 2023 — Present</div>
+                <div class="job-location">📍 Durban, South Africa</div>
+                <div class="job-period">📅 2023 — 2025</div>
               </div>
             </div>
           </div>
           <div class="job-body">
             <div class="job-section-title">Description</div>
             <div class="job-desc">
-              I initially joined Decidio as a support agent on the Truendo product. I was then promoted to a developer role, working specifically on the backend and DevOps operations as well as frontend tasks. This role pushed me to learn new technologies fast — going deep on Docker, Kubernetes, Go, and TypeScript as I got further into the product.
+              I joined Decidio as a support agent on the Truendo consent management platform, then progressed into a developer role working across backend, frontend, and DevOps. I contributed to a live production product serving enterprise clients — deepening my work in Docker, Kubernetes, Go, and TypeScript as I took on more of the stack.
             </div>
             <div class="job-section-title">Responsibilities</div>
             <div class="resp-grid">
-              <div class="resp-item"><span class="resp-num">01</span><span class="resp-text">Find bugs and fix them</span></div>
-              <div class="resp-item"><span class="resp-num">02</span><span class="resp-text">Optimization of data and queries</span></div>
-              <div class="resp-item"><span class="resp-num">03</span><span class="resp-text">Implement new features</span></div>
-              <div class="resp-item"><span class="resp-num">04</span><span class="resp-text">Quick fixes and hotfixes</span></div>
-              <div class="resp-item"><span class="resp-num">05</span><span class="resp-text">Fix and resolve client issues</span></div>
-              <div class="resp-item"><span class="resp-num">06</span><span class="resp-text">DevOps assistance and pipelines</span></div>
-              <div class="resp-item"><span class="resp-num">07</span><span class="resp-text">Database migration</span></div>
-              <div class="resp-item"><span class="resp-num">08</span><span class="resp-text">Docker container migration</span></div>
-              <div class="resp-item"><span class="resp-num">09</span><span class="resp-text">Consent record migration</span></div>
+              <div class="resp-item"><span class="resp-num">01</span><span class="resp-text">Implemented and maintained full-stack product features across frontend and backend</span></div>
+              <div class="resp-item"><span class="resp-num">02</span><span class="resp-text">Investigated and resolved software defects and production issues</span></div>
+              <div class="resp-item"><span class="resp-num">03</span><span class="resp-text">Optimised database queries and supported data migration work</span></div>
+              <div class="resp-item"><span class="resp-num">04</span><span class="resp-text">Assisted with Docker container and infrastructure migration tasks</span></div>
+              <div class="resp-item"><span class="resp-num">05</span><span class="resp-text">Supported DevOps operations and CI/CD deployment pipelines</span></div>
+              <div class="resp-item"><span class="resp-num">06</span><span class="resp-text">Investigated and resolved customer-reported technical issues</span></div>
+              <div class="resp-item"><span class="resp-num">07</span><span class="resp-text">Contributed to consent-record migration work on the platform</span></div>
+              <div class="resp-item"><span class="resp-num">08</span><span class="resp-text">Worked on API-related tasks and backend service changes</span></div>
+              <div class="resp-item"><span class="resp-num">09</span><span class="resp-text">Collaborated with the team on fixes, releases, and hotfixes</span></div>
             </div>
             <div class="job-tech">
               <span class="j-tag">TypeScript</span><span class="j-tag">React</span><span class="j-tag">Go</span><span class="j-tag">Docker</span><span class="j-tag">Kubernetes</span><span class="j-tag">AWS</span><span class="j-tag">GCP</span><span class="j-tag">Jenkins</span><span class="j-tag">SQL</span><span class="j-tag">RabbitMQ</span>
@@ -425,9 +465,9 @@
 
       <!-- TRANSITION CALLOUT -->
       <div class="transition-callout reveal">
-        <div class="tc-label">// Career pivot · 2022 — 2023</div>
+        <div class="tc-label">// Career pivot · 2021 — 2023</div>
         <div class="tc-text">
-          After 6 years in the trades, I made the jump. I'd been teaching myself to code on the side for years — building projects, learning frameworks, grinding through documentation. In 2022 I committed fully. By 2023 I had <span>a production engineering role</span>. No bootcamp. Just relentless building.
+          After several years in the trades, I decided to pursue software. I taught myself the fundamentals through documentation, online resources, and personal projects — building, breaking, and rebuilding until things worked. That work led to <span>a professional developer role at Decidio</span>, where I've been able to apply what I learned to real production software.
         </div>
       </div>
 
@@ -439,31 +479,31 @@
             <div class="job-accent orange"></div>
             <div class="job-header">
               <div class="job-title-block">
-                <div class="job-title" style="color:var(--orange)">Fitter</div>
+                <div class="job-title" style="color:var(--orange)">Fitter / Interior Installation</div>
                 <div class="job-company">El-Shaddai Interiors</div>
               </div>
               <div class="job-meta">
-                <div class="job-location">Durban, South Africa</div>
-                <div class="job-period">Jan 2016 — Dec 2022</div>
+                <div class="job-location">📍 Durban, South Africa</div>
+                <div class="job-period">📅 2016 — 2022</div>
               </div>
             </div>
           </div>
           <div class="job-body">
             <div class="job-section-title">Description</div>
             <div class="job-desc" style="border-left-color: rgba(255,107,53,0.3)">
-              I started working for my dad straight after high school. My job was to learn everything he knew so I could lessen the burden on him. Managed a team, handled supplier orders, and delivered finished interior fit-outs. Left after I found a new career path in software — and my brother took over from me.
+              I started working with my father straight after high school. Over the years I learned the trade from the ground up — handling supplier orders, assembling units, fitting on-site, and managing a team. A practical foundation that shaped how I approach problem-solving and quality in any kind of work.
             </div>
             <div class="job-section-title">Responsibilities</div>
             <div class="resp-grid">
-              <div class="resp-item"><span class="resp-num" style="color:var(--orange)">01</span><span class="resp-text">Accept and process orders from suppliers</span></div>
-              <div class="resp-item"><span class="resp-num" style="color:var(--orange)">02</span><span class="resp-text">Check if order is correct and complete</span></div>
-              <div class="resp-item"><span class="resp-num" style="color:var(--orange)">03</span><span class="resp-text">Categorise pieces based on the units</span></div>
-              <div class="resp-item"><span class="resp-num" style="color:var(--orange)">04</span><span class="resp-text">Assemble and build the units</span></div>
-              <div class="resp-item"><span class="resp-num" style="color:var(--orange)">05</span><span class="resp-text">Fit and finish units on-site</span></div>
-              <div class="resp-item"><span class="resp-num" style="color:var(--orange)">06</span><span class="resp-text">Allocate tasks and lead the team</span></div>
+              <div class="resp-item"><span class="resp-num" style="color:var(--orange)">01</span><span class="resp-text">Received and processed supplier orders</span></div>
+              <div class="resp-item"><span class="resp-num" style="color:var(--orange)">02</span><span class="resp-text">Checked order accuracy and completeness</span></div>
+              <div class="resp-item"><span class="resp-num" style="color:var(--orange)">03</span><span class="resp-text">Categorised pieces based on the units to be built</span></div>
+              <div class="resp-item"><span class="resp-num" style="color:var(--orange)">04</span><span class="resp-text">Assembled and built interior units</span></div>
+              <div class="resp-item"><span class="resp-num" style="color:var(--orange)">05</span><span class="resp-text">Fitted and finished units on-site</span></div>
+              <div class="resp-item"><span class="resp-num" style="color:var(--orange)">06</span><span class="resp-text">Allocated tasks and coordinated the team</span></div>
             </div>
             <div class="job-tech">
-              <span class="j-tag orange">Team Leadership</span><span class="j-tag orange">Precision</span><span class="j-tag orange">Problem Solving</span><span class="j-tag orange">Client Relations</span><span class="j-tag orange">Attention to Detail</span>
+              <span class="j-tag orange">Team Coordination</span><span class="j-tag orange">Precision</span><span class="j-tag orange">Problem Solving</span><span class="j-tag orange">Client Relations</span><span class="j-tag orange">Attention to Detail</span>
             </div>
           </div>
         </div>
@@ -471,19 +511,19 @@
 
       <!-- EDUCATION -->
       <div id="edu">
-        <div class="job-section-title" style="margin-bottom:1.5rem; opacity:.6">// Education</div>
+        <div class="job-section-title" style="margin-bottom:1.5rem; opacity:.6">// Education &amp; Background</div>
         <div class="edu-card reveal">
           <div class="edu-icon-big">🏫</div>
           <div>
             <div class="edu-title">High School Diploma</div>
-            <div class="edu-sub">Completed secondary education · Durban, South Africa<br>Then self-taught everything that actually matters in the industry.</div>
+            <div class="edu-sub">Completed secondary education · Durban, South Africa</div>
           </div>
         </div>
         <div class="edu-card reveal" style="border-color: rgba(0,212,255,0.2); background: var(--cyan-dim);">
           <div class="edu-icon-big" style="font-size:1.4rem">💻</div>
           <div>
             <div class="edu-title" style="color:var(--cyan)">Self-Taught Developer</div>
-            <div class="edu-sub">2019 — 2023 · Online Resources, Docs, Building<br>No bootcamp. Learned by shipping real projects, reading documentation, and grinding. The best school was just building things and breaking them.</div>
+            <div class="edu-sub">Learned software development independently through documentation, online resources, and hands-on personal projects — then applied that foundation to a professional production role.</div>
           </div>
         </div>
       </div>
@@ -494,14 +534,14 @@
   <!-- BOTTOM CTA -->
   <div class="career-cta">
     <div class="cta-half">
-      <h3>Ready to hire me?</h3>
-      <p>I'm open to full-time roles and interesting problems. Let's talk about what you're building.</p>
-      <a href="contact.html" class="btn-cyan">Get In Touch →</a>
+      <h3>Open to opportunities.</h3>
+      <p>If you're hiring for a full-stack or backend role, or you're working on an interesting problem — I'd like to hear about it.</p>
+      <a href="/contact/" class="btn-cyan">Contact me →</a>
     </div>
     <div class="cta-half">
       <h3>See what I've built.</h3>
-      <p>Check out my projects — real code, real products, some live right now.</p>
-      <a href="projects.html" class="btn-outline">View Projects →</a>
+      <p>Selected projects and production work — including contributions to a live consent management platform.</p>
+      <a href="/projects/" class="btn-outline">View projects →</a>
     </div>
   </div>
 
@@ -509,35 +549,24 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-copy">© 2025 <span>Marco Ramcharan</span> · Full Stack Engineer</div>
+  <div class="footer-copy">© <span id="year">2025</span> <span>Marco Ramcharan</span> · Full Stack Developer</div>
   <div class="footer-links">
     <a href="/">Home</a>
-    <a href="/projects">Projects</a>
-    <a href="/contact">Contact</a>
     <a href="/about/">About</a>
+    <a href="/projects/">Projects</a>
     <a href="/career/">Career</a>
+    <a href="/contact/">Contact</a>
   </div>
 </footer>
 
 <script>
-  // CURSOR
-  const cursor = document.getElementById('cursor');
-  const ring = document.getElementById('cursorRing');
-  let mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove',e=>{ mx=e.clientX; my=e.clientY; cursor.style.left=mx+'px'; cursor.style.top=my+'px'; });
-  (function animRing(){ rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(animRing); })();
-  document.querySelectorAll('a,button,.snap-pill').forEach(el=>{
-    el.addEventListener('mouseenter',()=>{ cursor.classList.add('hover'); ring.classList.add('hover'); });
-    el.addEventListener('mouseleave',()=>{ cursor.classList.remove('hover'); ring.classList.remove('hover'); });
-  });
-
   // HAMBURGER / MOBILE MENU
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
 
   function toggleMenu(forceClose = false) {
-    const isOpen = mobileMenu.classList.contains('open') || forceClose;
-    if (isOpen) {
+    const isOpen = mobileMenu.classList.contains('open');
+    if (isOpen || forceClose) {
       hamburger.classList.remove('open');
       mobileMenu.classList.remove('open');
       mobileMenu.setAttribute('aria-hidden', 'true');
@@ -560,26 +589,34 @@
     if (e.key === 'Escape' && mobileMenu.classList.contains('open')) toggleMenu(true);
   });
 
-  // SCROLL REVEAL
-  const observer = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
-  },{threshold:0.06});
-  document.querySelectorAll('.reveal, .job-card, .transition-callout, .edu-card').forEach(el=>observer.observe(el));
+  // SCROLL REVEAL — with fail-safe
+  const revealEls = document.querySelectorAll('.reveal, .job-card, .transition-callout, .edu-card');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.06 });
+    revealEls.forEach(el => observer.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('visible'));
+  }
 
   // ACTIVE YEAR NAV on scroll
   const navItems = document.querySelectorAll('.year-nav-item');
-  const sections = ['job-decidio','job-fitter','edu'];
-  window.addEventListener('scroll', ()=>{
+  const sections = ['job-decidio', 'job-fitter', 'edu'];
+  window.addEventListener('scroll', () => {
     let current = sections[0];
-    sections.forEach(id=>{
+    sections.forEach(id => {
       const el = document.getElementById(id);
-      if(el && window.scrollY >= el.offsetTop - 200) current = id;
+      if (el && window.scrollY >= el.offsetTop - 200) current = id;
     });
-    navItems.forEach(a=>{
-      const href = a.getAttribute('href').replace('#','');
+    navItems.forEach(a => {
+      const href = a.getAttribute('href').replace('#', '');
       a.classList.toggle('active', href === current);
     });
   });
+
+  // DYNAMIC YEAR
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
