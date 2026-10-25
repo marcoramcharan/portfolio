@@ -1,746 +1,534 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Marco Ramcharan — Projects</title>
-<meta name="description" content="Marco Ramcharan's project portfolio — including professional contributions to the Truendo consent management platform and independently built projects.">
-<link rel="icon" type="image/png" href="/images/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marco Ramcharan — Projects</title>
+  <meta name="description"
+    content="Marco Ramcharan's project portfolio — including professional contributions to the Truendo consent management platform and independently built projects." />
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0a0a0a;
+      --cream: #f5f3ee;
+      --lime: #d8ff3e;
+      --green: #00ffa3;
+      --dim: #9a968d;
+      --b: 4px solid var(--ink);
+    }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0a0a0a;
-    --bg-2:#121212;
-    --line:#2a2a2a;
-    --txt:#f5f3ee;
-    --txt-dim:#9a968d;
-    --accent:#d8ff3e;
-    --green:#00ffa3;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{background:var(--bg);color:var(--txt);font-family:'Space Grotesk',sans-serif;overflow-x:hidden;}
-  .display{font-family:'Bebas Neue',sans-serif;letter-spacing:0.04em;}
-  a{text-decoration:none;color:inherit;}
-  img{max-width:100%;display:block;}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ink); color: var(--cream);
+      font-family: 'Space Grotesk', sans-serif; overflow-x: hidden; min-width: 360px;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    [hidden] { display: none !important; }
 
-  /* NAV */
-  nav{
-    position:fixed;top:0;left:0;right:0;z-index:60;
-    display:flex;justify-content:space-between;align-items:center;
-    padding:28px 6vw;
-    background:linear-gradient(to bottom,rgba(10,10,10,0.92) 0%,transparent 100%);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(42,42,42,0.5);
-  }
-  .logo{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.08em;color:var(--txt);}
-  nav ul{display:flex;gap:36px;list-style:none;}
-  nav a{color:var(--txt-dim);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-  nav a:hover,nav a.active{color:var(--accent);}
-  .nav-cta{
-    font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:0.14em;
-    text-transform:uppercase;font-weight:700;border:1px solid var(--accent);
-    color:var(--accent);padding:9px 22px;transition:background 0.2s,color 0.2s;
-  }
-  .nav-cta:hover{background:var(--accent);color:var(--bg);}
-  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;z-index:70;padding:6px;}
-  .burger span{width:26px;height:2px;background:var(--txt);display:block;transition:transform 0.3s,opacity 0.3s;}
-  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-  .burger.open span:nth-child(2){opacity:0;}
-  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-  .mobile-menu{
-    position:fixed;inset:0;background:var(--bg);z-index:55;
-    display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
-    padding:6vw;gap:20px;
-    transform:translateY(-100%);
-    transition:transform 0.4s ease,visibility 0.4s;
-    visibility:hidden;
-  }
-  .mobile-menu.open{transform:translateY(0);visibility:visible;}
-  .mobile-menu a{color:var(--txt);font-family:'Bebas Neue',sans-serif;font-size:13vw;text-transform:uppercase;line-height:1;}
-  .mobile-menu a:hover{color:var(--accent);}
-  .mobile-menu .mm-sub{margin-top:36px;display:flex;gap:20px;}
-  .mobile-menu .mm-sub a{font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:0.14em;}
-  @media(max-width:800px){nav ul,.nav-cta{display:none;}.burger{display:flex;}}
+    .display { font-family: 'Bebas Neue', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: .01em; line-height: .88; }
+    .wrap { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 5vw; }
+    @media (min-width: 1400px) { .wrap { padding: 0 40px; } }
 
-  /* PAGE HEADER */
-  .page-header{padding:160px 6vw 80px;border-bottom:1px solid var(--line);}
-  .eyebrow{font-size:13px;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;}
-  .page-header h1{font-size:clamp(56px,12vw,180px);line-height:0.9;text-transform:uppercase;margin-bottom:40px;}
-  .page-header-sub{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;}
-  .page-header-sub p{max-width:520px;font-size:17px;color:var(--txt-dim);line-height:1.65;}
-  .item-count{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,6vw,80px);color:var(--txt-dim);line-height:1;white-space:nowrap;}
-  .item-count span{display:block;font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:0.2em;text-transform:uppercase;color:var(--txt-dim);}
+    /* BUTTONS */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px;
+      letter-spacing: .08em; text-transform: uppercase; text-decoration: none; cursor: pointer;
+      background: var(--ink); color: var(--lime); border: var(--b); border-radius: 0;
+      padding: 18px 32px; box-shadow: 6px 6px 0 var(--cream);
+      transition: transform .12s, box-shadow .12s;
+    }
+    .btn:hover { transform: translate(3px, 3px); box-shadow: 3px 3px 0 var(--cream); }
+    .btn:active { transform: translate(6px, 6px); box-shadow: 0 0 0 var(--cream); }
+    .btn.sm { padding: 10px 18px; font-size: 13px; box-shadow: 4px 4px 0 var(--ink); }
+    .btn.sm:hover { box-shadow: 2px 2px 0 var(--ink); transform: translate(2px, 2px); }
 
-  /* FILTER BAR */
-  .filter-bar{padding:40px 6vw;display:flex;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);align-items:center;}
-  .filter-btn{
-    background:transparent;border:1px solid var(--line);color:var(--txt-dim);
-    font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:0.15em;
-    text-transform:uppercase;padding:10px 24px;border-radius:100px;cursor:pointer;
-    transition:all 0.2s ease;
-  }
-  .filter-btn:hover{border-color:var(--txt);color:var(--txt);}
-  .filter-btn.active{background:var(--accent);border-color:var(--accent);color:#0a0a0a;font-weight:700;}
-  .filter-count{
-    margin-left:auto;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;
-    color:var(--txt-dim);
-  }
-  .filter-count strong{color:var(--accent);font-weight:700;}
+    /* NAV */
+    nav.top { position: sticky; top: 0; z-index: 60; background: var(--ink); color: var(--cream); border-bottom: 4px solid var(--lime); }
+    .nav-in { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 12px 5vw; max-width: 1280px; margin: 0 auto; }
+    .logo { font-family: 'Bebas Neue', sans-serif; font-size: 40px; line-height: 1; letter-spacing: .04em; text-decoration: none; color: var(--lime); }
+    nav.top ul { display: flex; gap: 6px; list-style: none; }
+    nav.top ul a { display: block; text-decoration: none; font-weight: 700; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; padding: 10px 16px; border: 3px solid transparent; transition: .12s; }
+    nav.top ul a:hover, nav.top ul a.active { background: var(--lime); color: var(--ink); border-color: var(--lime); }
+    nav.top .btn.sm { background: var(--lime); color: var(--ink); border-color: var(--lime); box-shadow: 4px 4px 0 var(--cream); }
+    .burger { display: none; flex-direction: column; gap: 6px; background: var(--lime); border: 0; cursor: pointer; padding: 12px; z-index: 70; }
+    .burger span { width: 26px; height: 4px; background: var(--ink); display: block; transition: .25s; }
+    .burger.open span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
+    .mobile-menu {
+      position: fixed; inset: 0; background: var(--lime); color: var(--ink); z-index: 55;
+      display: flex; flex-direction: column; justify-content: center; padding: 96px 6vw 6vw; gap: 4px; overflow-y: auto;
+      transform: translateY(-100%); visibility: hidden; transition: transform .35s ease, visibility .35s;
+    }
+    .mobile-menu.open { transform: translateY(0); visibility: visible; }
+    .mobile-menu a { font-family: 'Bebas Neue', sans-serif; font-size: min(16vw, 10.5vh); line-height: .95; text-transform: uppercase; text-decoration: none; }
+    .mobile-menu a:hover { color: var(--cream); -webkit-text-stroke: 3px var(--ink); }
+    .mobile-menu .mm-sub { margin-top: 24px; display: flex; gap: 24px; }
+    .mobile-menu .mm-sub a { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: .1em; }
+    @media (max-width: 920px) { nav.top ul, nav.top .btn.sm { display: none; } .burger { display: flex; } }
 
-  /* GALLERY */
-  .gallery-section{padding:80px 6vw 120px;}
-  .masonry{columns:3;column-gap:3px;}
-  @media(max-width:900px){.masonry{columns:2;}}
-  @media(max-width:560px){.masonry{columns:1;}}
+    /* HERO */
+    .page-hero { background: var(--lime); color: var(--ink); border-bottom: var(--b); position: relative; overflow: hidden; }
+    .ph-in { max-width: 1280px; margin: 0 auto; padding: clamp(36px, 6vw, 80px) 5vw clamp(44px, 6vw, 80px); position: relative; }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 26px; }
+    .chip { font-weight: 700; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; border: var(--b); background: var(--cream); padding: 8px 16px; box-shadow: 4px 4px 0 var(--ink); }
+    .chip.dark { background: var(--ink); color: var(--lime); }
+    .page-hero h1 { font-size: clamp(110px, 28vw, 460px); line-height: .78; }
+    .page-hero h1 .row { display: block; }
+    .page-hero h1 .outline { color: transparent; -webkit-text-stroke: clamp(2px, .5vw, 6px) var(--ink); }
+    .page-hero h1 .block { display: inline-block; background: var(--ink); color: var(--lime); padding: .02em .1em 0; transform: rotate(-2deg); box-shadow: 10px 10px 0 var(--cream); margin: .05em 0 .08em; }
+    .hero-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; flex-wrap: wrap; margin-top: clamp(28px, 4vw, 48px); }
+    .page-hero .lead { font-size: clamp(18px, 2vw, 24px); line-height: 1.45; font-weight: 500; max-width: 700px; }
+    .counter { background: var(--ink); color: var(--lime); border: var(--b); box-shadow: 8px 8px 0 var(--cream); padding: 14px 26px 12px; text-align: center; transform: rotate(3deg); }
+    .counter #projectCount { font-family: 'Bebas Neue', sans-serif; font-size: clamp(64px, 8vw, 110px); line-height: .85; display: block; }
+    .counter small { font-weight: 700; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--cream); }
 
-  .gallery-card{
-    break-inside:avoid;margin-bottom:3px;position:relative;overflow:hidden;
-    cursor:pointer;background:var(--bg-2);display:block;
-    border:1px solid var(--line);
-    text-align:left;width:100%;font-family:inherit;color:inherit;
-    transition:border-color 0.25s;
-  }
-  .gallery-card:hover{border-color:var(--accent);}
-  .card-mock{
-    width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;
-    position:relative;overflow:hidden;background:linear-gradient(135deg,#0d0d0d,#151515);
-  }
-  .gallery-card.tall .card-mock{aspect-ratio:3/4;}
-  .card-mock img{
-    width:100%;height:100%;object-fit:cover;display:block;
-    position:absolute;top:0;left:0;
-    transition:transform 0.6s cubic-bezier(.2,.8,.2,1);
-  }
-  .gallery-card:hover .card-mock img{transform:scale(1.05);}
-  .mock-fallback{
-    font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,5vw,56px);
-    letter-spacing:0.06em;opacity:0.2;position:relative;z-index:1;
-    text-align:center;padding:0 24px;
-  }
+    /* FILTER BAR */
+    .filter-bar { background: var(--cream); color: var(--ink); border-bottom: var(--b); }
+    .filter-in { max-width: 1280px; margin: 0 auto; padding: 22px 5vw; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .filter-btn {
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .1em; text-transform: uppercase;
+      background: var(--cream); color: var(--ink); border: 3px solid var(--ink); padding: 12px 22px; cursor: pointer;
+      box-shadow: 4px 4px 0 var(--ink); transition: .12s;
+    }
+    .filter-btn:hover { background: var(--lime); transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }
+    .filter-btn.active { background: var(--ink); color: var(--lime); transform: translate(4px, 4px); box-shadow: 0 0 0 var(--ink); }
+    .filter-count { margin-left: auto; font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
+    .filter-count strong { background: var(--lime); border: 3px solid var(--ink); padding: 2px 10px; font-size: 16px; }
 
-  .card-overlay{
-    position:absolute;inset:0;
-    background:linear-gradient(to top,rgba(10,10,10,0.94) 0%,rgba(10,10,10,0.2) 55%,transparent 100%);
-    opacity:0;transition:opacity 0.35s ease;
-    display:flex;flex-direction:column;justify-content:flex-end;padding:28px;
-    z-index:2;pointer-events:none;
-  }
-  .gallery-card:hover .card-overlay,
-  .gallery-card:focus-visible .card-overlay{opacity:1;}
+    /* GALLERY */
+    .gallery { padding: clamp(48px, 7vw, 96px) 0 clamp(64px, 9vw, 120px); }
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px; }
+    .card {
+      display: flex; flex-direction: column; text-align: left; width: 100%; cursor: pointer; font-family: inherit; color: var(--cream);
+      background: var(--ink); border: 4px solid var(--cream); box-shadow: 10px 10px 0 var(--lime); padding: 0;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .card:hover { transform: translate(-4px, -4px); box-shadow: 14px 14px 0 var(--lime); }
+    .card.flagship { grid-column: 1 / -1; }
+    .shot { position: relative; aspect-ratio: 16/10; border-bottom: 4px solid var(--cream); background: var(--lime); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .card.flagship .shot { aspect-ratio: 21/8; }
+    .shot .ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: clamp(90px, 16vw, 230px); line-height: .8; color: var(--ink); text-align: center; padding: 0 16px; }
+    .shot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .card:hover .shot img { transform: scale(1.04); }
+    .badge { position: absolute; top: 16px; left: 16px; z-index: 2; background: var(--green); color: var(--ink); font-weight: 700; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; padding: 6px 12px; border: 3px solid var(--ink); }
+    .arrow { position: absolute; top: 16px; right: 16px; z-index: 2; width: 44px; height: 44px; background: var(--ink); color: var(--lime); display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 700; border: 3px solid var(--lime); }
+    .info { padding: clamp(20px, 3vw, 32px); display: flex; flex-direction: column; gap: 12px; }
+    .cat { align-self: flex-start; background: var(--lime); color: var(--ink); font-weight: 700; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; padding: 5px 12px; }
+    .ctitle { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 5vw, 76px); line-height: .9; text-transform: uppercase; letter-spacing: .01em; }
+    .card.flagship .ctitle { font-size: clamp(56px, 8vw, 120px); }
+    .stack { font-weight: 700; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--lime); }
+    .more { font-weight: 700; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; border-top: 3px solid var(--cream); padding-top: 14px; margin-top: 6px; }
+    @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } .card.flagship .shot { aspect-ratio: 16/10; } }
 
-  /* Always-visible info for touch devices */
-  .card-info-static{
-    padding:16px 20px;
-    border-top:1px solid var(--line);
-    display:flex;flex-direction:column;gap:4px;
-  }
-  @media(hover:hover){
-    .card-info-static{display:none;}
-    .card-overlay{opacity:0;}
-  }
-  @media(hover:none){
-    .card-overlay{opacity:1;}
-    .gallery-card:hover .card-overlay{opacity:1;}
-  }
+    .empty-state { display: none; text-align: center; padding: 60px 5vw; }
+    .empty-state.visible { display: block; }
+    .empty-state h3 { font-size: clamp(56px, 9vw, 120px); color: var(--lime); }
+    .empty-state p { font-size: 18px; margin-top: 14px; }
 
-  .card-cat{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
-  .card-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(20px,2.5vw,28px);text-transform:uppercase;line-height:1.1;margin-bottom:6px;}
-  .card-stack{font-size:12px;color:var(--txt-dim);letter-spacing:0.1em;}
-  .card-arrow{
-    position:absolute;top:20px;right:20px;width:36px;height:36px;
-    border:1px solid rgba(255,255,255,0.15);background:rgba(0,0,0,0.4);
-    display:flex;align-items:center;justify-content:center;font-size:14px;color:rgba(255,255,255,0.4);
-    transition:all 0.3s;z-index:3;
-  }
-  .gallery-card:hover .card-arrow,
-  .gallery-card:focus-visible .card-arrow{color:var(--accent);border-color:var(--accent);transform:translate(3px,-3px);}
-  .card-badge{
-    position:absolute;top:20px;left:20px;
-    font-size:10px;letter-spacing:0.15em;text-transform:uppercase;
-    color:var(--bg);background:var(--accent);padding:4px 10px;font-weight:700;
-    z-index:3;
-  }
-  .card-badge.professional{background:var(--green);}
+    /* LIGHTBOX */
+    .lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(10, 10, 10, .92); display: flex; align-items: center; justify-content: center; padding: 28px; overflow-y: auto; opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s; }
+    .lightbox.open { opacity: 1; visibility: visible; }
+    .panel { position: relative; width: 100%; max-width: 780px; max-height: 92vh; overflow-y: auto; background: var(--cream); color: var(--ink); border: 4px solid var(--ink); box-shadow: 14px 14px 0 var(--lime); }
+    .lb-close { position: absolute; top: 14px; right: 14px; z-index: 5; width: 48px; height: 48px; background: var(--ink); color: var(--lime); border: 3px solid var(--lime); font-size: 20px; font-weight: 700; cursor: pointer; font-family: inherit; transition: .12s; }
+    .lb-close:hover, .lb-close:focus-visible { background: var(--lime); color: var(--ink); border-color: var(--ink); }
+    .lb-image { position: relative; aspect-ratio: 16/9; border-bottom: var(--b); background: var(--lime); overflow: hidden; }
+    .lb-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .lb-image .ph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: clamp(60px, 12vw, 140px); color: var(--ink); text-align: center; line-height: .85; padding: 0 16px; }
+    .lb-body { padding: clamp(22px, 4vw, 40px); display: flex; flex-direction: column; gap: 16px; }
+    .lb-cat { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
+    .lb-badge { background: var(--green); border: 3px solid var(--ink); padding: 3px 10px; }
+    .lb-title { font-size: clamp(52px, 8vw, 100px); }
+    .lb-desc { font-size: 17px; line-height: 1.65; font-weight: 500; }
+    .lb-label { font-weight: 700; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; background: var(--ink); color: var(--lime); align-self: flex-start; padding: 5px 10px; }
+    .lb-contrib { font-size: 16px; line-height: 1.65; border-left: 6px solid var(--ink); padding-left: 16px; }
+    .lb-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .lb-tag { font-weight: 700; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; border: 3px solid var(--ink); padding: 6px 10px; background: var(--cream); }
+    .lb-tag:nth-child(odd) { background: var(--lime); }
+    .lb-actions { margin-top: 6px; }
+    .lb-actions .btn { background: var(--ink); color: var(--lime); box-shadow: 6px 6px 0 var(--lime); }
+    .lb-actions .btn:hover { box-shadow: 3px 3px 0 var(--lime); }
+    @media (max-width: 560px) { .lightbox { padding: 12px; } }
 
-  /* Empty state */
-  .empty-state{
-    display:none;padding:80px 6vw;text-align:center;border-bottom:1px solid var(--line);
-  }
-  .empty-state.visible{display:block;}
-  .empty-state h3{font-family:'Bebas Neue',sans-serif;font-size:36px;text-transform:uppercase;color:var(--txt-dim);margin-bottom:12px;}
-  .empty-state p{color:var(--txt-dim);font-size:14px;}
+    /* CTA */
+    .cta { background: var(--lime); color: var(--ink); border-top: var(--b); border-bottom: var(--b); padding: clamp(56px, 9vw, 120px) 0; overflow: hidden; }
+    .cta h2 { font-size: clamp(80px, 20vw, 320px); line-height: .78; }
+    .cta h2 .o { color: transparent; -webkit-text-stroke: clamp(2px, .5vw, 6px) var(--ink); }
+    .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 28px 40px; margin-top: clamp(28px, 4vw, 48px); }
+    .cta-row p { font-size: clamp(18px, 2vw, 24px); font-weight: 700; max-width: 560px; line-height: 1.35; }
+    .cta-row a.mail { display: inline-block; margin-top: 8px; font-size: 18px; color: var(--ink); }
 
-  /* LIGHTBOX */
-  .lightbox{
-    position:fixed;inset:0;z-index:100;
-    background:rgba(10,10,10,0.97);
-    display:flex;align-items:center;justify-content:center;
-    opacity:0;visibility:hidden;transition:opacity 0.3s ease,visibility 0.3s ease;
-    padding:40px;overflow-y:auto;
-  }
-  .lightbox.open{opacity:1;visibility:visible;}
+    /* FOOTER */
+    footer { background: var(--ink); color: var(--cream); padding: clamp(48px, 7vw, 90px) 0 0; overflow: hidden; }
+    .foot-cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; padding-bottom: clamp(40px, 6vw, 72px); }
+    .foot-brand p { color: var(--dim); font-size: 15px; line-height: 1.7; max-width: 380px; margin: 16px 0 24px; }
+    .foot-col h4 { font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink); background: var(--lime); display: inline-block; padding: 5px 10px; margin-bottom: 20px; }
+    .foot-col a, .foot-col p { display: block; color: var(--cream); text-decoration: none; font-size: 17px; font-weight: 500; line-height: 1.5; margin-bottom: 10px; word-break: break-word; }
+    .foot-col a:hover { color: var(--lime); }
+    .social { width: 56px; height: 56px; background: var(--lime); color: var(--ink); border: 3px solid var(--lime); display: inline-flex; align-items: center; justify-content: center; box-shadow: 5px 5px 0 var(--cream); transition: .12s; }
+    .social:hover { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--cream); }
+    .social svg { width: 26px; height: 26px; fill: currentColor; }
+    .giant { font-family: 'Bebas Neue', sans-serif; font-size: clamp(120px, 34vw, 520px); line-height: .74; text-transform: uppercase; color: var(--lime); text-align: center; user-select: none; white-space: nowrap; margin: 0 -2vw; border-top: 4px solid var(--lime); padding-top: .06em; }
+    .foot-bottom { border-top: 4px solid var(--lime); background: var(--lime); color: var(--ink); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 14px 5vw; font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+    @media (max-width: 1000px) { .foot-cols { grid-template-columns: 1fr 1fr; } .foot-brand { grid-column: 1 / -1; } }
+    @media (max-width: 560px) { .foot-cols { grid-template-columns: 1fr; } }
 
-  .lightbox-panel{
-    max-width:720px;width:100%;
-    background:var(--bg-2);
-    border:1px solid var(--line);
-    padding:0;
-    display:flex;flex-direction:column;
-    max-height:90vh;
-    overflow-y:auto;
-    position:relative;
-  }
-  .lightbox-close{
-    position:absolute;top:16px;right:16px;
-    background:rgba(10,10,10,0.7);border:1px solid var(--line);
-    color:var(--txt);width:44px;height:44px;border-radius:50%;
-    cursor:pointer;font-size:16px;
-    display:flex;align-items:center;justify-content:center;
-    transition:all 0.2s;z-index:5;
-    font-family:inherit;
-  }
-  .lightbox-close:hover,
-  .lightbox-close:focus-visible{background:var(--accent);border-color:var(--accent);color:#0a0a0a;}
-
-  .lightbox-image{
-    width:100%;aspect-ratio:16/9;
-    background:#0a0a0a;overflow:hidden;
-    border-bottom:1px solid var(--line);
-    position:relative;
-  }
-  .lightbox-image img{width:100%;height:100%;object-fit:cover;display:block;}
-  .lightbox-image .mock-fallback{
-    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    font-size:clamp(40px,8vw,80px);opacity:0.15;
-  }
-
-  .lightbox-body{padding:32px 36px 36px;}
-  .lightbox-cat{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
-  .lightbox-badge{
-    display:inline-block;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;
-    color:var(--bg);background:var(--green);padding:4px 10px;font-weight:700;
-    margin-left:8px;vertical-align:middle;
-  }
-  .lightbox-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(28px,4vw,44px);text-transform:uppercase;line-height:1;margin-bottom:16px;}
-  .lightbox-desc{font-size:15px;color:var(--txt-dim);line-height:1.7;margin-bottom:20px;}
-
-  .lightbox-section-title{
-    font-size:11px;letter-spacing:0.18em;text-transform:uppercase;
-    color:var(--txt-dim);margin-bottom:10px;
-  }
-  .lightbox-contrib{font-size:14px;color:var(--txt);line-height:1.7;margin-bottom:24px;}
-
-  .lightbox-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px;}
-  .lightbox-tag{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(216,255,62,0.35);padding:5px 12px;background:rgba(216,255,62,0.06);}
-
-  .lightbox-actions{display:flex;gap:12px;flex-wrap:wrap;}
-  .lightbox-btn{
-    display:inline-flex;align-items:center;gap:10px;
-    background:var(--accent);color:#0a0a0a;
-    padding:14px 28px;border-radius:100px;
-    font-size:12px;letter-spacing:0.15em;text-transform:uppercase;font-weight:700;
-    transition:transform 0.2s,opacity 0.2s;
-  }
-  .lightbox-btn:hover{transform:scale(1.04);}
-  .lightbox-btn.ghost{
-    background:transparent;color:var(--txt);border:1px solid var(--line);
-  }
-  .lightbox-btn.ghost:hover{border-color:var(--accent);color:var(--accent);transform:none;}
-  .lightbox-btn[hidden]{display:none;}
-
-  /* CTA STRIP */
-  .cta-strip{border-top:1px solid var(--line);padding:120px 6vw;text-align:center;}
-  .cta-strip h2{font-size:clamp(40px,9vw,140px);text-transform:uppercase;line-height:0.95;margin-bottom:40px;}
-  .btn{display:inline-flex;align-items:center;gap:12px;background:var(--accent);color:#0a0a0a;padding:18px 40px;border-radius:100px;font-size:14px;letter-spacing:0.15em;text-transform:uppercase;font-weight:700;transition:transform 0.25s ease,box-shadow 0.25s ease;}
-  .btn:hover{transform:scale(1.05);box-shadow:0 0 30px rgba(216,255,62,0.25);}
-  .cta-sub{color:var(--txt-dim);font-size:15px;margin-top:24px;}
-  .cta-sub a{color:var(--txt);border-bottom:1px solid var(--line);}
-  .cta-sub a:hover{color:var(--accent);border-color:var(--accent);}
-
-  /* FOOTER */
-  footer{border-top:1px solid var(--line);padding:80px 6vw 36px;background:var(--bg-2);}
-  .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid var(--line);margin-bottom:32px;}
-  .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:0.08em;display:block;margin-bottom:16px;color:var(--txt);}
-  .footer-tagline{font-size:14px;color:var(--txt-dim);line-height:1.7;max-width:300px;margin-bottom:20px;}
-  .footer-socials{display:flex;gap:10px;}
-  .footer-social{width:38px;height:38px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--txt-dim);transition:border-color 0.2s,color 0.2s;}
-  .footer-social:hover{border-color:var(--accent);color:var(--accent);}
-  .footer-col h4{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;font-weight:500;}
-  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
-  .footer-col a{color:var(--txt-dim);font-size:13px;transition:color 0.2s;}
-  .footer-col a:hover{color:var(--accent);}
-  .footer-col p{color:var(--txt-dim);font-size:13px;line-height:1.7;}
-  .footer-col p a{color:var(--txt);}
-  .hire-btn{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;padding:9px 20px;transition:background 0.2s,color 0.2s;margin-top:12px;}
-  .hire-btn:hover{background:var(--accent);color:var(--bg);}
-  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-  .footer-copy{font-size:12px;color:var(--txt-dim);}
-  .footer-copy span{color:var(--accent);}
-  .footer-bottom-links{display:flex;gap:20px;}
-  .footer-bottom-links a{font-size:11px;color:var(--txt-dim);letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-  .footer-bottom-links a:hover{color:var(--accent);}
-
-  @media(max-width:900px){
-    .footer-top{grid-template-columns:1fr 1fr;gap:36px;}
-    .footer-brand{grid-column:1/-1;}
-  }
-  @media(max-width:560px){
-    .footer-top{grid-template-columns:1fr;}
-    .page-header{padding:130px 6vw 60px;}
-    .gallery-section{padding:48px 6vw 80px;}
-    .cta-strip{padding:80px 6vw;}
-    .lightbox{padding:16px;}
-    .lightbox-body{padding:24px;}
-  }
-
-  /* REDUCED MOTION */
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    *{transition:none !important;}
-    .gallery-card:hover .card-mock img{transform:none;}
-  }
-
-  a:focus-visible,button:focus-visible,.gallery-card:focus-visible{
-    outline:2px solid var(--accent);outline-offset:3px;
-  }
-</style>
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+    a:focus-visible, button:focus-visible { outline: 4px solid var(--lime); outline-offset: 3px; box-shadow: 0 0 0 8px var(--ink); }
+    .filter-bar a:focus-visible, .filter-bar button:focus-visible, .panel button:focus-visible, .panel a:focus-visible { outline-color: var(--ink); box-shadow: 0 0 0 8px var(--lime); }
+  </style>
 </head>
+
 <body>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/projects/">Projects</a>
-  <a href="/career/">Career</a>
-  <a href="/contact/">Contact</a>
-  <div class="mm-sub">
-    <a href="https://github.com/marcoramcharan" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a href="mailto:miguelmarcoramcharan@gmail.com">Email</a>
-  </div>
-</div>
-
-<!-- NAV -->
-<nav>
-  <a href="/" class="logo display" style="text-decoration:none;">MARCO</a>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/about/">About</a></li>
-    <li><a href="/projects/" class="active">Projects</a></li>
-    <li><a href="/career/">Career</a></li>
-    <li><a href="/contact/">Contact</a></li>
-  </ul>
-  <a href="mailto:miguelmarcoramcharan@gmail.com" class="nav-cta">Hire Me</a>
-  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- PAGE HEADER -->
-<header class="page-header">
-  <div class="eyebrow">Portfolio — Durban, South Africa</div>
-  <h1 class="display">My<br>Work.</h1>
-  <div class="page-header-sub">
-    <p>Selected projects — a live production platform I contributed to at Decidio, plus independently built work. Filter by category to narrow down.</p>
-    <div class="item-count display">
-      <span id="projectCount">3</span>
-      <span>Projects shown</span>
-    </div>
-  </div>
-</header>
-
-<!-- FILTER BAR -->
-<div class="filter-bar" role="group" aria-label="Filter projects by category">
-  <button class="filter-btn active" data-filter="all" aria-pressed="true">All work</button>
-  <button class="filter-btn" data-filter="production" aria-pressed="false">Production</button>
-  <button class="filter-btn" data-filter="fullstack" aria-pressed="false">Full Stack</button>
-  <button class="filter-btn" data-filter="frontend" aria-pressed="false">Frontend</button>
-  <span class="filter-count" aria-live="polite" id="filterCount"><strong>3</strong> of 3</span>
-</div>
-
-<!-- GALLERY -->
-<section class="gallery-section">
-  <div class="masonry" id="masonry">
-
-    <!-- ═══ TRUENDO — FLAGSHIP ═══ -->
-    <button
-      type="button"
-      class="gallery-card tall"
-      data-category="production fullstack"
-      data-title="Truendo"
-      data-classification="Professional experience · Decidio GmbH"
-      data-desc="Truendo is a live consent management platform (CMP) used by enterprise clients. I contributed to it as a full-stack developer at Decidio GmbH — working on backend APIs, frontend features, and infrastructure tasks within a production environment."
-      data-contribution="Contributed to full-stack feature development, backend and API work, bug investigation and production fixes, database optimisation, Docker container and infrastructure migrations, and consent-record migration work. Worked with TypeScript, React, Go, Docker, and Kubernetes day-to-day."
-      data-stack="TypeScript · React · Go · Docker · Kubernetes · SQL · RabbitMQ"
-      data-url="https://truendo.com"
-      data-image="/images/truendo.png"
-      aria-label="View details for Truendo — professional experience at Decidio GmbH"
-    >
-      <div class="card-mock">
-        <img src="/images/truendo.png" alt="Truendo consent management platform interface" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-        <div class="mock-fallback" style="display:none;">TRUENDO</div>
-      </div>
-      <div class="card-badge professional">Production</div>
-      <div class="card-arrow" aria-hidden="true">↗</div>
-      <div class="card-overlay">
-        <div class="card-cat">Professional · Production</div>
-        <div class="card-title display">Truendo</div>
-        <div class="card-stack">TypeScript · React · Go · Kubernetes</div>
-      </div>
-      <div class="card-info-static">
-        <div class="card-cat">Professional · Production</div>
-        <div class="card-title display">Truendo</div>
-        <div class="card-stack">TypeScript · React · Go · Kubernetes</div>
-      </div>
-    </button>
-
-    <!-- ═══ STATIC PENGU ═══ -->
-    <button
-      type="button"
-      class="gallery-card"
-      data-category="fullstack frontend"
-      data-title="Static Pengu"
-      data-classification="Independent project"
-      data-desc="An independently built web application using React on the frontend, an ExpressJS backend, MongoDB for data, and BunnyCDN for asset delivery. Deployed on Vercel."
-      data-contribution="Built the frontend, backend, and deployment pipeline as a personal project — from database schema through to production hosting."
-      data-stack="React · ExpressJS · MongoDB · BunnyCDN · Vercel"
-      data-url="https://staticpengu.vercel.app"
-      data-image="/images/staticpengu.png"
-      aria-label="View details for Static Pengu"
-    >
-      <div class="card-mock">
-        <img src="/images/staticpengu.png" alt="Static Pengu project interface" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-        <div class="mock-fallback" style="display:none;">STATIC PENGU</div>
-      </div>
-      <div class="card-arrow" aria-hidden="true">↗</div>
-      <div class="card-overlay">
-        <div class="card-cat">Full Stack</div>
-        <div class="card-title display">Static Pengu</div>
-        <div class="card-stack">React · ExpressJS · MongoDB · BunnyCDN</div>
-      </div>
-      <div class="card-info-static">
-        <div class="card-cat">Full Stack</div>
-        <div class="card-title display">Static Pengu</div>
-        <div class="card-stack">React · ExpressJS · MongoDB · BunnyCDN</div>
-      </div>
-    </button>
-
-    <!-- ═══ EL-SHADDAI INTERIORS ═══ -->
-    <button
-      type="button"
-      class="gallery-card"
-      data-category="frontend"
-      data-title="El-Shaddai Interiors"
-      data-classification="Independent project"
-      data-desc="A website for a Durban-based custom interiors company. Built to present services and completed work to potential clients."
-      data-contribution="Designed and built the site using HTML, CSS, and JavaScript — deployed to Vercel and maintained as the company's public web presence."
-      data-stack="HTML · CSS · JavaScript · Vercel"
-      data-url="https://www.elshaddaiinteriors.co.za"
-      data-image="/images/el-shaddai-interiors.png"
-      aria-label="View details for El-Shaddai Interiors"
-    >
-      <div class="card-mock">
-        <img src="/images/el-shaddai-interiors.png" alt="El-Shaddai Interiors website — custom interiors company in Durban" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-        <div class="mock-fallback" style="display:none;">EL-SHADDAI</div>
-      </div>
-      <div class="card-arrow" aria-hidden="true">↗</div>
-      <div class="card-overlay">
-        <div class="card-cat">Frontend</div>
-        <div class="card-title display">El-Shaddai Interiors</div>
-        <div class="card-stack">HTML · CSS · JavaScript · Vercel</div>
-      </div>
-      <div class="card-info-static">
-        <div class="card-cat">Frontend</div>
-        <div class="card-title display">El-Shaddai Interiors</div>
-        <div class="card-stack">HTML · CSS · JavaScript · Vercel</div>
-      </div>
-    </button>
-
-  </div>
-
-  <div class="empty-state" id="emptyState">
-    <h3 class="display">Nothing here yet.</h3>
-    <p>No projects match this filter. Try selecting a different category.</p>
-  </div>
-</section>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbTitle" hidden>
-  <div class="lightbox-panel" role="document">
-    <button class="lightbox-close" id="lbClose" aria-label="Close project details">✕</button>
-
-    <div class="lightbox-image">
-      <img id="lbImage" src="" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-      <div class="mock-fallback" id="lbFallback" style="display:none;"></div>
-    </div>
-
-    <div class="lightbox-body">
-      <div class="lightbox-cat">
-        <span id="lbCat"></span>
-        <span class="lightbox-badge" id="lbBadge" hidden>Production</span>
-      </div>
-      <h2 class="lightbox-title display" id="lbTitle"></h2>
-      <p class="lightbox-desc" id="lbDesc"></p>
-
-      <div class="lightbox-section-title">My contribution</div>
-      <p class="lightbox-contrib" id="lbContrib"></p>
-
-      <div class="lightbox-section-title">Technologies</div>
-      <div class="lightbox-tags" id="lbTags"></div>
-
-      <div class="lightbox-actions">
-        <a class="lightbox-btn" id="lbLive" href="#" target="_blank" rel="noopener noreferrer">View live project →</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CTA STRIP -->
-<section class="cta-strip">
-  <h2 class="display">Like what<br>you see?</h2>
-  <a class="btn" href="/contact/">Get in touch →</a>
-  <p class="cta-sub">
-    Or reach me directly at <a href="mailto:miguelmarcoramcharan@gmail.com">miguelmarcoramcharan@gmail.com</a>
-  </p>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="display footer-logo">MARCO</div>
-      <p class="footer-tagline">Self-taught full-stack developer from Durban. Contributed to production software at Decidio GmbH on the Truendo consent management platform.</p>
-      <div class="footer-socials">
-        <a href="https://github.com/marcoramcharan" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Marco Ramcharan on GitHub">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Navigate</h4>
+  <nav class="top">
+    <div class="nav-in">
+      <a href="/" class="logo">MARCO</a>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/about/">About</a></li>
-        <li><a href="/projects/">Projects</a></li>
+        <li><a href="/projects/" class="active">Projects</a></li>
         <li><a href="/career/">Career</a></li>
         <li><a href="/contact/">Contact</a></li>
       </ul>
+      <a class="btn sm" href="mailto:miguelmarcoramcharan@gmail.com">Hire me</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="footer-col">
-      <h4>Projects</h4>
-      <ul>
-        <li><a href="https://truendo.com" target="_blank" rel="noopener noreferrer">Truendo</a></li>
-        <li><a href="https://staticpengu.vercel.app" target="_blank" rel="noopener noreferrer">Static Pengu</a></li>
-        <li><a href="https://www.elshaddaiinteriors.co.za" target="_blank" rel="noopener noreferrer">El-Shaddai Interiors</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Get in touch</h4>
-      <p>
-        <a href="mailto:miguelmarcoramcharan@gmail.com">miguelmarcoramcharan@gmail.com</a><br>
-        Durban, KwaZulu-Natal
-      </p>
-      <a href="mailto:miguelmarcoramcharan@gmail.com" class="hire-btn">Hire Me ↗</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">© <span id="year">2025</span> <span>Marco Ramcharan</span> · Full Stack Developer</div>
-    <div class="footer-bottom-links">
-      <a href="/about/">About</a>
-      <a href="/career/">Career</a>
-      <a href="/contact/">Contact</a>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/projects/">Projects</a>
+    <a href="/career/">Career</a>
+    <a href="/contact/">Contact</a>
+    <div class="mm-sub">
+      <a href="https://github.com/marcoramcharan" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="mailto:miguelmarcoramcharan@gmail.com">Email</a>
     </div>
   </div>
-</footer>
 
-<script>
-  // ─── MOBILE MENU ───
-  const burger = document.getElementById('burger');
-  const mobileMenu = document.getElementById('mobileMenu');
+  <main>
+    <!-- HERO -->
+    <header class="page-hero">
+      <div class="ph-in">
+        <div class="chip-row">
+          <span class="chip dark">Portfolio</span>
+          <span class="chip">Durban, South Africa</span>
+        </div>
+        <h1 class="display">
+          <span class="row">My</span>
+          <span class="row"><span class="block">work.</span></span>
+        </h1>
+        <div class="hero-row">
+          <p class="lead">Selected projects — a live production platform I contributed to at Decidio, plus independently built work. Filter by category to narrow down.</p>
+          <div class="counter"><span id="projectCount">3</span><small>Projects shown</small></div>
+        </div>
+      </div>
+    </header>
 
-  function setMenu(open) {
-    mobileMenu.classList.toggle('open', open);
-    burger.classList.toggle('open', open);
-    burger.setAttribute('aria-expanded', String(open));
-    mobileMenu.setAttribute('aria-hidden', String(!open));
-    document.body.style.overflow = open ? 'hidden' : '';
-  }
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <div class="filter-in" role="group" aria-label="Filter projects by category">
+        <button class="filter-btn active" data-filter="all" aria-pressed="true">All work</button>
+        <button class="filter-btn" data-filter="production" aria-pressed="false">Production</button>
+        <button class="filter-btn" data-filter="fullstack" aria-pressed="false">Full Stack</button>
+        <button class="filter-btn" data-filter="frontend" aria-pressed="false">Frontend</button>
+        <span class="filter-count" aria-live="polite" id="filterCount"><strong>3</strong> of 3</span>
+      </div>
+    </div>
 
-  burger.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open')));
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-      setMenu(false);
-      burger.focus();
+    <!-- GALLERY -->
+    <section class="gallery">
+      <div class="wrap">
+        <div class="grid" id="masonry">
+
+          <!-- TRUENDO -->
+          <button type="button" class="card flagship" data-category="production fullstack" data-title="Truendo"
+            data-classification="Professional experience · Decidio GmbH"
+            data-desc="Truendo is a live consent management platform (CMP) used by enterprise clients. I contributed to it as a full-stack developer at Decidio GmbH — working on backend APIs, frontend features, and infrastructure tasks within a production environment."
+            data-contribution="Contributed to full-stack feature development, backend and API work, bug investigation and production fixes, database optimisation, Docker container and infrastructure migrations, and consent-record migration work. Worked with TypeScript, React, Go, Docker, and Kubernetes day-to-day."
+            data-stack="TypeScript · React · Go · Docker · Kubernetes · SQL · RabbitMQ" data-url="https://truendo.com"
+            data-image="/images/truendo.png" aria-label="View details for Truendo — professional experience at Decidio GmbH">
+            <div class="shot">
+              <div class="ph" aria-hidden="true">TRUENDO</div>
+              <img src="/images/truendo.png" alt="Truendo consent management platform interface" loading="lazy" onerror="this.style.display='none'">
+              <span class="badge">Production</span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+            <div class="info">
+              <span class="cat">Professional · Production</span>
+              <div class="ctitle">Truendo</div>
+              <div class="stack">TypeScript · React · Go · Kubernetes</div>
+              <div class="more">View details +</div>
+            </div>
+          </button>
+
+          <!-- STATIC PENGU -->
+          <button type="button" class="card" data-category="fullstack frontend" data-title="Static Pengu"
+            data-classification="Independent project"
+            data-desc="An independently built web application using React on the frontend, an ExpressJS backend, MongoDB for data, and BunnyCDN for asset delivery. Deployed on Vercel."
+            data-contribution="Built the frontend, backend, and deployment pipeline as a personal project — from database schema through to production hosting."
+            data-stack="React · ExpressJS · MongoDB · BunnyCDN · Vercel" data-url="https://staticpengu.vercel.app"
+            data-image="/images/staticpengu.png" aria-label="View details for Static Pengu">
+            <div class="shot">
+              <div class="ph" aria-hidden="true">STATIC PENGU</div>
+              <img src="/images/staticpengu.png" alt="Static Pengu project interface" loading="lazy" onerror="this.style.display='none'">
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+            <div class="info">
+              <span class="cat">Full Stack</span>
+              <div class="ctitle">Static Pengu</div>
+              <div class="stack">React · ExpressJS · MongoDB · BunnyCDN</div>
+              <div class="more">View details +</div>
+            </div>
+          </button>
+
+          <!-- EL-SHADDAI -->
+          <button type="button" class="card" data-category="frontend" data-title="El-Shaddai Interiors"
+            data-classification="Independent project"
+            data-desc="A website for a Durban-based custom interiors company. Built to present services and completed work to potential clients."
+            data-contribution="Designed and built the site using HTML, CSS, and JavaScript — deployed to Vercel and maintained as the company's public web presence."
+            data-stack="HTML · CSS · JavaScript · Vercel" data-url="https://www.elshaddaiinteriors.co.za"
+            data-image="/images/el-shaddai-interiors.png" aria-label="View details for El-Shaddai Interiors">
+            <div class="shot">
+              <div class="ph" aria-hidden="true">EL-SHADDAI</div>
+              <img src="/images/el-shaddai-interiors.png" alt="El-Shaddai Interiors website — custom interiors company in Durban" loading="lazy" onerror="this.style.display='none'">
+              <span class="arrow" aria-hidden="true">↗</span>
+            </div>
+            <div class="info">
+              <span class="cat">Frontend</span>
+              <div class="ctitle">El-Shaddai Interiors</div>
+              <div class="stack">HTML · CSS · JavaScript · Vercel</div>
+              <div class="more">View details +</div>
+            </div>
+          </button>
+
+        </div>
+
+        <div class="empty-state" id="emptyState">
+          <h3 class="display">Nothing here yet.</h3>
+          <p>No projects match this filter. Try selecting a different category.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbTitle">
+      <div class="panel">
+        <button class="lb-close" id="lbClose" aria-label="Close project details">✕</button>
+        <div class="lb-image">
+          <div class="ph" id="lbFallback" aria-hidden="true"></div>
+          <img id="lbImage" src="" alt="" onerror="this.style.display='none'">
+        </div>
+        <div class="lb-body">
+          <div class="lb-cat">
+            <span id="lbCat"></span>
+            <span class="lb-badge" id="lbBadge" hidden>Production</span>
+          </div>
+          <h2 class="lb-title display" id="lbTitle"></h2>
+          <p class="lb-desc" id="lbDesc"></p>
+          <span class="lb-label">My contribution</span>
+          <p class="lb-contrib" id="lbContrib"></p>
+          <span class="lb-label">Technologies</span>
+          <div class="lb-tags" id="lbTags"></div>
+          <div class="lb-actions">
+            <a class="btn" id="lbLive" href="#" target="_blank" rel="noopener noreferrer">View live project →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="wrap">
+        <h2 class="display">Like what<br><span class="o">you see?</span></h2>
+        <div class="cta-row">
+          <a class="btn" href="/contact/">Get in touch →</a>
+          <div>
+            <p>Or reach me directly.</p>
+            <a class="mail" href="mailto:miguelmarcoramcharan@gmail.com">miguelmarcoramcharan@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-cols">
+        <div class="foot-brand">
+          <a href="/" class="logo">MARCO</a>
+          <p>Self-taught full-stack developer from Durban. Contributed to production software at Decidio GmbH on the Truendo consent management platform.</p>
+          <a class="social" href="https://github.com/marcoramcharan" target="_blank" rel="noopener noreferrer" aria-label="Marco Ramcharan on GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+          </a>
+        </div>
+        <div class="foot-col">
+          <h4>Navigate</h4>
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="/projects/">Projects</a>
+          <a href="/career/">Career</a>
+          <a href="/contact/">Contact</a>
+        </div>
+        <div class="foot-col">
+          <h4>Projects</h4>
+          <a href="https://truendo.com" target="_blank" rel="noopener noreferrer">Truendo</a>
+          <a href="https://staticpengu.vercel.app" target="_blank" rel="noopener noreferrer">Static Pengu</a>
+          <a href="https://www.elshaddaiinteriors.co.za" target="_blank" rel="noopener noreferrer">El-Shaddai Interiors</a>
+        </div>
+        <div class="foot-col">
+          <h4>Get in touch</h4>
+          <a href="mailto:miguelmarcoramcharan@gmail.com">miguelmarcoramcharan@gmail.com</a>
+          <p>Durban, KwaZulu-Natal</p>
+        </div>
+      </div>
+    </div>
+    <div class="giant" aria-hidden="true">Marco</div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2025</span> Marco Ramcharan</span>
+      <span>Full Stack Developer · Durban</span>
+    </div>
+  </footer>
+
+  <script>
+    // ─── MOBILE MENU ───
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function setMenu(open) {
+      mobileMenu.classList.toggle('open', open);
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', String(open));
+      mobileMenu.setAttribute('aria-hidden', String(!open));
+      document.body.style.overflow = open ? 'hidden' : '';
     }
-  });
-
-  // ─── FILTERS ───
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.gallery-card');
-  const projectCount = document.getElementById('projectCount');
-  const filterCount = document.getElementById('filterCount');
-  const emptyState = document.getElementById('emptyState');
-  const totalProjects = cards.length;
-
-  function applyFilter(filter) {
-    let visible = 0;
-    cards.forEach(card => {
-      const cats = (card.dataset.category || '').split(/\s+/).filter(Boolean);
-      const show = filter === 'all' || cats.includes(filter);
-      card.style.display = show ? '' : 'none';
-      if (show) visible++;
+    burger.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open')));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) { setMenu(false); burger.focus(); }
     });
 
-    projectCount.textContent = String(totalProjects);
-    filterCount.innerHTML = '<strong>' + visible + '</strong> of ' + totalProjects;
+    // ─── FILTERS ───
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
+    const projectCount = document.getElementById('projectCount');
+    const filterCount = document.getElementById('filterCount');
+    const emptyState = document.getElementById('emptyState');
+    const totalProjects = cards.length;
 
-    if (visible === 0) {
-      emptyState.classList.add('visible');
-    } else {
-      emptyState.classList.remove('visible');
-    }
-  }
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-pressed', 'false');
+    function applyFilter(filter) {
+      let visible = 0;
+      cards.forEach(card => {
+        const cats = (card.dataset.category || '').split(/\s+/).filter(Boolean);
+        const show = filter === 'all' || cats.includes(filter);
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
       });
-      btn.classList.add('active');
-      btn.setAttribute('aria-pressed', 'true');
-      applyFilter(btn.dataset.filter);
+      projectCount.textContent = String(totalProjects);
+      filterCount.innerHTML = '<strong>' + visible + '</strong> of ' + totalProjects;
+      emptyState.classList.toggle('visible', visible === 0);
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+        applyFilter(btn.dataset.filter);
+      });
     });
-  });
 
-  // ─── LIGHTBOX ───
-  const lightbox = document.getElementById('lightbox');
-  const lbClose = document.getElementById('lbClose');
-  const lbTitle = document.getElementById('lbTitle');
-  const lbCat = document.getElementById('lbCat');
-  const lbBadge = document.getElementById('lbBadge');
-  const lbDesc = document.getElementById('lbDesc');
-  const lbContrib = document.getElementById('lbContrib');
-  const lbTags = document.getElementById('lbTags');
-  const lbLive = document.getElementById('lbLive');
-  const lbImage = document.getElementById('lbImage');
-  const lbFallback = document.getElementById('lbFallback');
-  let lastFocused = null;
+    // ─── LIGHTBOX ───
+    const lightbox = document.getElementById('lightbox');
+    const lbClose = document.getElementById('lbClose');
+    const lbTitle = document.getElementById('lbTitle');
+    const lbCat = document.getElementById('lbCat');
+    const lbBadge = document.getElementById('lbBadge');
+    const lbDesc = document.getElementById('lbDesc');
+    const lbContrib = document.getElementById('lbContrib');
+    const lbTags = document.getElementById('lbTags');
+    const lbLive = document.getElementById('lbLive');
+    const lbImage = document.getElementById('lbImage');
+    const lbFallback = document.getElementById('lbFallback');
+    let lastFocused = null;
 
-  function openLightbox(card) {
-    lastFocused = card;
+    function openLightbox(card) {
+      lastFocused = card;
+      const title = card.dataset.title || '';
+      const stack = card.dataset.stack || '';
+      const url = card.dataset.url || '';
+      const image = card.dataset.image || '';
 
-    const title = card.dataset.title || '';
-    const classification = card.dataset.classification || '';
-    const desc = card.dataset.desc || '';
-    const contrib = card.dataset.contribution || '';
-    const stack = card.dataset.stack || '';
-    const url = card.dataset.url || '';
-    const image = card.dataset.image || '';
+      lbTitle.textContent = title;
+      lbCat.textContent = card.dataset.classification || '';
+      lbDesc.textContent = card.dataset.desc || '';
+      lbContrib.textContent = card.dataset.contribution || '';
+      lbBadge.hidden = !(card.dataset.category && card.dataset.category.includes('production'));
 
-    lbTitle.textContent = title;
-    lbCat.textContent = classification;
-    lbDesc.textContent = desc;
-    lbContrib.textContent = contrib;
+      lbTags.replaceChildren();
+      if (stack) {
+        stack.split('·').map(s => s.trim()).filter(Boolean).forEach(tech => {
+          const span = document.createElement('span');
+          span.className = 'lb-tag';
+          span.textContent = tech;
+          lbTags.appendChild(span);
+        });
+      }
 
-    // Badge — show only for professional/production work
-    if (card.dataset.category && card.dataset.category.includes('production')) {
-      lbBadge.hidden = false;
-    } else {
-      lbBadge.hidden = true;
-    }
-
-    // Technologies
-    lbTags.replaceChildren();
-    if (stack) {
-      stack.split('·').map(s => s.trim()).filter(Boolean).forEach(tech => {
-        const span = document.createElement('span');
-        span.className = 'lightbox-tag';
-        span.textContent = tech;
-        lbTags.appendChild(span);
-      });
-    }
-
-    // Image
-    if (image) {
-      lbImage.style.display = '';
-      lbImage.src = image;
-      lbImage.alt = title ? title + ' screenshot' : 'Project screenshot';
-      lbFallback.style.display = 'none';
       lbFallback.textContent = title.toUpperCase();
-    } else {
-      lbImage.style.display = 'none';
-      lbFallback.style.display = 'flex';
-      lbFallback.textContent = title.toUpperCase();
+      if (image) {
+        lbImage.style.display = '';
+        lbImage.src = image;
+        lbImage.alt = title ? title + ' screenshot' : 'Project screenshot';
+      } else {
+        lbImage.style.display = 'none';
+      }
+
+      if (url && url !== '#') { lbLive.href = url; lbLive.hidden = false; } else { lbLive.hidden = true; }
+
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => lbClose.focus(), 50);
     }
 
-    // Live link — hide if no URL
-    if (url && url !== '#') {
-      lbLive.href = url;
-      lbLive.hidden = false;
-    } else {
-      lbLive.hidden = true;
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+      if (lastFocused) { lastFocused.focus(); lastFocused = null; }
     }
 
-    lightbox.hidden = false;
-    // Force reflow so the transition runs
-    void lightbox.offsetWidth;
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    cards.forEach(card => card.addEventListener('click', () => openLightbox(card)));
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+    });
+    lightbox.addEventListener('keydown', e => {
+      if (e.key !== 'Tab' || !lightbox.classList.contains('open')) return;
+      const focusable = Array.from(lightbox.querySelectorAll('button, a[href]')).filter(el => !el.hidden);
+      if (!focusable.length) return;
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
 
-    // Focus the close button
-    setTimeout(() => lbClose.focus(), 50);
-  }
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
-  function closeLightbox() {
-    lightbox.classList.remove('open');
-    document.body.style.overflow = '';
-    if (lastFocused) {
-      lastFocused.focus();
-      lastFocused = null;
-    }
-    // Hide after transition
-    setTimeout(() => {
-      if (!lightbox.classList.contains('open')) lightbox.hidden = true;
-    }, 300);
-  }
-
-  cards.forEach(card => {
-    card.addEventListener('click', () => openLightbox(card));
-  });
-
-  lbClose.addEventListener('click', closeLightbox);
-
-  lightbox.addEventListener('click', e => {
-    // Close when clicking the backdrop (outside the panel)
-    if (e.target === lightbox) closeLightbox();
-  });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
-  });
-
-  // Focus trap inside lightbox
-  lightbox.addEventListener('keydown', e => {
-    if (e.key !== 'Tab' || !lightbox.classList.contains('open')) return;
-    const focusable = lightbox.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
-    if (focusable.length === 0) return;
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
-    if (e.shiftKey && document.activeElement === first) {
-      e.preventDefault(); last.focus();
-    } else if (!e.shiftKey && document.activeElement === last) {
-      e.preventDefault(); first.focus();
-    }
-  });
-
-  // ─── DYNAMIC YEAR ───
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
 </body>
+
 </html>

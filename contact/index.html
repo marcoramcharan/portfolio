@@ -1,398 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Marco Ramcharan — Contact</title>
-<meta name="description" content="Contact Marco Ramcharan — self-taught full-stack developer from Durban, South Africa. Open to full-time software development roles, contract work, and interesting technical projects.">
-<link rel="icon" type="image/png" href="/images/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marco Ramcharan — Contact</title>
+  <meta name="description"
+    content="Contact Marco Ramcharan — self-taught full-stack developer from Durban, South Africa. Open to full-time software development roles, contract work, and interesting technical projects." />
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0a0a0a;
+      --cream: #f5f3ee;
+      --lime: #d8ff3e;
+      --green: #00ffa3;
+      --dim: #9a968d;
+      --b: 4px solid var(--ink);
+    }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0a0a0a;
-    --bg-2:#121212;
-    --line:#2a2a2a;
-    --txt:#f5f3ee;
-    --txt-dim:#9a968d;
-    --accent:#d8ff3e;
-    --green:#00ffa3;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{background:var(--bg);color:var(--txt);font-family:'Space Grotesk',sans-serif;overflow-x:hidden;}
-  .display{font-family:'Bebas Neue',sans-serif;letter-spacing:0.04em;}
-  a{text-decoration:none;color:inherit;}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ink); color: var(--cream);
+      font-family: 'Space Grotesk', sans-serif; overflow-x: hidden; min-width: 360px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
 
-  /* NAV */
-  nav{
-    position:fixed;top:0;left:0;right:0;z-index:60;
-    display:flex;justify-content:space-between;align-items:center;
-    padding:28px 6vw;
-    background:linear-gradient(to bottom,rgba(10,10,10,0.92) 0%,transparent 100%);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(42,42,42,0.5);
-  }
-  .logo{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:0.08em;color:var(--txt);text-decoration:none;}
-  nav ul{display:flex;gap:36px;list-style:none;}
-  nav a{color:var(--txt-dim);font-size:13px;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-  nav a:hover,nav a.active{color:var(--accent);}
-  .nav-cta{
-    font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:0.14em;
-    text-transform:uppercase;font-weight:700;border:1px solid var(--accent);
-    color:var(--accent);padding:9px 22px;transition:background 0.2s,color 0.2s;
-  }
-  .nav-cta:hover{background:var(--accent);color:var(--bg);}
-  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;z-index:70;padding:6px;}
-  .burger span{width:26px;height:2px;background:var(--txt);display:block;transition:transform 0.3s,opacity 0.3s;}
-  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-  .burger.open span:nth-child(2){opacity:0;}
-  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .display { font-family: 'Bebas Neue', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: .01em; line-height: .88; }
+    .wrap { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 5vw; }
+    @media (min-width: 1400px) { .wrap { padding: 0 40px; } }
 
-  /* MOBILE MENU */
-  .mobile-menu{
-    position:fixed;inset:0;background:var(--bg);z-index:55;
-    display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
-    padding:6vw;gap:20px;
-    transform:translateY(-100%);
-    transition:transform 0.4s ease,visibility 0.4s;
-    visibility:hidden;
-  }
-  .mobile-menu.open{transform:translateY(0);visibility:visible;}
-  .mobile-menu a{color:var(--txt);font-family:'Bebas Neue',sans-serif;font-size:13vw;text-transform:uppercase;line-height:1;}
-  .mobile-menu a:hover{color:var(--accent);}
-  .mobile-menu .mm-sub{margin-top:36px;display:flex;gap:20px;}
-  .mobile-menu .mm-sub a{font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:0.14em;}
+    /* BUTTONS */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px;
+      letter-spacing: .08em; text-transform: uppercase; text-decoration: none; cursor: pointer;
+      background: var(--ink); color: var(--lime); border: var(--b); border-radius: 0;
+      padding: 18px 32px; box-shadow: 6px 6px 0 var(--cream);
+      transition: transform .12s, box-shadow .12s;
+    }
+    .btn:hover { transform: translate(3px, 3px); box-shadow: 3px 3px 0 var(--cream); }
+    .btn:active { transform: translate(6px, 6px); box-shadow: 0 0 0 var(--cream); }
+    .btn.sm { padding: 10px 18px; font-size: 13px; box-shadow: 4px 4px 0 var(--ink); }
+    .btn.sm:hover { box-shadow: 2px 2px 0 var(--ink); transform: translate(2px, 2px); }
 
-  @media(max-width:800px){
-    nav ul,.nav-cta{display:none;}
-    .burger{display:flex;}
-  }
+    /* NAV */
+    nav.top { position: sticky; top: 0; z-index: 60; background: var(--ink); color: var(--cream); border-bottom: 4px solid var(--lime); }
+    .nav-in { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 12px 5vw; max-width: 1280px; margin: 0 auto; }
+    .logo { font-family: 'Bebas Neue', sans-serif; font-size: 40px; line-height: 1; letter-spacing: .04em; text-decoration: none; color: var(--lime); }
+    nav.top ul { display: flex; gap: 6px; list-style: none; }
+    nav.top ul a { display: block; text-decoration: none; font-weight: 700; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; padding: 10px 16px; border: 3px solid transparent; transition: .12s; }
+    nav.top ul a:hover, nav.top ul a.active { background: var(--lime); color: var(--ink); border-color: var(--lime); }
+    nav.top .btn.sm { background: var(--lime); color: var(--ink); border-color: var(--lime); box-shadow: 4px 4px 0 var(--cream); }
+    .burger { display: none; flex-direction: column; gap: 6px; background: var(--lime); border: 0; cursor: pointer; padding: 12px; z-index: 70; }
+    .burger span { width: 26px; height: 4px; background: var(--ink); display: block; transition: .25s; }
+    .burger.open span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
+    .mobile-menu {
+      position: fixed; inset: 0; background: var(--lime); color: var(--ink); z-index: 55;
+      display: flex; flex-direction: column; justify-content: center; padding: 96px 6vw 6vw; gap: 4px; overflow-y: auto;
+      transform: translateY(-100%); visibility: hidden; transition: transform .35s ease, visibility .35s;
+    }
+    .mobile-menu.open { transform: translateY(0); visibility: visible; }
+    .mobile-menu a { font-family: 'Bebas Neue', sans-serif; font-size: min(16vw, 10.5vh); line-height: .95; text-transform: uppercase; text-decoration: none; }
+    .mobile-menu a:hover { color: var(--cream); -webkit-text-stroke: 3px var(--ink); }
+    .mobile-menu .mm-sub { margin-top: 24px; display: flex; gap: 24px; }
+    .mobile-menu .mm-sub a { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: .1em; }
+    @media (max-width: 920px) { nav.top ul, nav.top .btn.sm { display: none; } .burger { display: flex; } }
 
-  /* PAGE HEADER */
-  .page-header{padding:160px 6vw 80px;border-bottom:1px solid var(--line);}
-  .eyebrow{font-size:13px;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;}
-  .page-header h1{font-size:clamp(56px,12vw,180px);line-height:0.9;text-transform:uppercase;margin-bottom:40px;}
-  .page-header-sub{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;}
-  .page-header-sub p{max-width:520px;font-size:17px;color:var(--txt-dim);line-height:1.65;}
+    /* HERO */
+    .page-hero { background: var(--lime); color: var(--ink); border-bottom: var(--b); position: relative; overflow: hidden; }
+    .ph-in { max-width: 1280px; margin: 0 auto; padding: clamp(36px, 6vw, 80px) 5vw clamp(44px, 6vw, 80px); position: relative; }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 26px; }
+    .chip { font-weight: 700; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; border: var(--b); background: var(--cream); padding: 8px 16px; box-shadow: 4px 4px 0 var(--ink); }
+    .chip.dark { background: var(--ink); color: var(--green); }
+    .chip .dot { display: inline-block; width: 10px; height: 10px; background: var(--green); border-radius: 50%; margin-right: 8px; animation: blink 1.4s infinite; }
+    @keyframes blink { 50% { opacity: .25; } }
+    .page-hero h1 { font-size: clamp(100px, 25vw, 400px); line-height: .78; }
+    .page-hero h1 .row { display: block; }
+    .page-hero h1 .outline { color: transparent; -webkit-text-stroke: clamp(2px, .5vw, 6px) var(--ink); }
+    .page-hero h1 .block { display: inline-block; background: var(--ink); color: var(--lime); padding: .02em .1em 0; transform: rotate(-2deg); box-shadow: 10px 10px 0 var(--cream); margin: .05em 0 .08em; }
+    .page-hero .lead { margin-top: clamp(28px, 4vw, 48px); font-size: clamp(18px, 2vw, 24px); line-height: 1.45; font-weight: 500; max-width: 700px; }
+    .sticker {
+      position: absolute; right: 5vw; top: clamp(20px, 5vw, 60px); width: clamp(100px, 14vw, 180px); aspect-ratio: 1; border-radius: 50%;
+      background: var(--ink); color: var(--lime); border: var(--b); box-shadow: 8px 8px 0 var(--cream);
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      font-family: 'Bebas Neue', sans-serif; font-size: clamp(22px, 3.4vw, 40px); line-height: .95; transform: rotate(12deg); animation: wob 5s ease-in-out infinite;
+    }
+    @keyframes wob { 50% { transform: rotate(-6deg) scale(1.05); } }
+    @media (max-width: 700px) { .sticker { top: auto; bottom: 18px; right: 18px; } }
 
-  /* CONTACT SECTION */
-  .contact-section{padding:100px 6vw;border-bottom:1px solid var(--line);}
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+    /* TICKER */
+    .ticker { background: var(--ink); color: var(--lime); overflow: hidden; border-bottom: 4px solid var(--lime); }
+    .ticker-track { display: flex; width: max-content; white-space: nowrap; animation: scroll 26s linear infinite; font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 6.5vw, 88px); line-height: 1; padding: 16px 0 12px; }
+    .ticker-track span { padding: 0 26px; }
+    .ticker-track span.o { color: transparent; -webkit-text-stroke: 2px var(--cream); }
+    .ticker-track i { font-style: normal; color: var(--cream); padding: 0 6px; }
+    @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-  .contact-links{display:flex;flex-direction:column;gap:3px;}
-  .contact-link{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:28px 32px;border:1px solid var(--line);background:var(--bg-2);
-    font-size:15px;color:var(--txt);
-    transition:border-color 0.2s,background 0.2s,color 0.2s;
-    position:relative;
-  }
-  .contact-link.static{cursor:default;}
-  a.contact-link:hover{border-color:var(--accent);background:rgba(216,255,62,0.04);color:var(--accent);}
-  .contact-link-label{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--txt-dim);margin-bottom:4px;}
-  .contact-link-value{
-    font-family:'Space Grotesk',sans-serif;
-    word-break:break-word;
-    line-height:1.35;
-  }
-  .contact-link-arrow{font-size:20px;color:var(--txt-dim);transition:color 0.2s,transform 0.2s;margin-left:16px;}
-  a.contact-link:hover .contact-link-arrow{color:var(--accent);transform:translateX(4px);}
+    /* CONTACT */
+    section { padding: clamp(56px, 8vw, 104px) 0; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: start; }
+    .links { display: flex; flex-direction: column; gap: 28px; }
+    .clink {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      background: var(--cream); color: var(--ink); border: var(--b); box-shadow: 8px 8px 0 var(--lime);
+      padding: clamp(20px, 3vw, 32px); text-decoration: none;
+      transition: transform .12s, box-shadow .12s, background .12s;
+    }
+    a.clink:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0 var(--lime); background: var(--lime); box-shadow: 4px 4px 0 var(--cream); }
+    .clink.static { box-shadow: 8px 8px 0 var(--cream); background: var(--lime); }
+    .clink .lab { font-weight: 700; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; opacity: .65; margin-bottom: 6px; }
+    .clink .val { font-family: 'Bebas Neue', sans-serif; font-size: clamp(30px, 3.6vw, 52px); line-height: .95; text-transform: none; letter-spacing: .02em; word-break: break-word; }
+    .clink .arr { font-size: 40px; line-height: 1; font-weight: 700; flex-shrink: 0; transition: transform .12s; }
+    a.clink:hover .arr { transform: translate(4px, -4px); }
 
-  /* COPY BUTTON */
-  .copy-btn{
-    display:inline-flex;align-items:center;gap:8px;
-    background:transparent;border:1px solid var(--line);color:var(--txt-dim);
-    font-family:'Space Grotesk',sans-serif;font-size:11px;letter-spacing:0.14em;
-    text-transform:uppercase;font-weight:700;
-    padding:8px 14px;cursor:pointer;
-    transition:border-color 0.2s,color 0.2s,background 0.2s;
-    margin-top:8px;
-  }
-  .copy-btn:hover,.copy-btn:focus-visible{border-color:var(--accent);color:var(--accent);}
-  .copy-btn.copied{border-color:var(--green);color:var(--green);background:rgba(0,255,163,0.05);}
+    .copy-btn { align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; cursor: pointer; background: var(--ink); color: var(--cream); border: 3px solid var(--cream); font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: .1em; text-transform: uppercase; padding: 14px 20px; box-shadow: 5px 5px 0 var(--cream); transition: .12s; }
+    .copy-btn:hover { background: var(--cream); color: var(--ink); transform: translate(2px, 2px); box-shadow: 3px 3px 0 var(--lime); }
+    .copy-btn.copied { background: var(--green); color: var(--ink); border-color: var(--green); }
 
-  /* STATUS CARD */
-  .status-card{border:1px solid var(--line);background:var(--bg-2);padding:40px;}
-  .status-dot{width:8px;height:8px;background:var(--green);border-radius:50%;display:inline-block;margin-right:10px;animation:pulse 2.4s infinite;}
-  @keyframes pulse{
-    0%,100%{box-shadow:0 0 0 0 rgba(0,255,163,0.4);}
-    50%{box-shadow:0 0 0 6px rgba(0,255,163,0);}
-  }
-  .status-badge{
-    display:flex;align-items:center;
-    font-size:12px;letter-spacing:0.15em;text-transform:uppercase;
-    color:var(--green);margin-bottom:32px;
-  }
-  .status-card h3{
-    font-family:'Bebas Neue',sans-serif;font-size:36px;text-transform:uppercase;
-    color:var(--txt);margin-bottom:16px;line-height:1;
-  }
-  .status-card p{font-size:15px;color:var(--txt-dim);line-height:1.65;margin-bottom:28px;}
-  .status-meta{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);}
-  .meta-row{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);font-size:13px;gap:16px;}
-  .meta-key{color:var(--txt-dim);letter-spacing:0.1em;text-transform:uppercase;font-size:11px;flex-shrink:0;}
-  .meta-val{color:var(--txt);text-align:right;}
+    .status { background: var(--ink); border: 4px solid var(--green); box-shadow: 12px 12px 0 var(--green); padding: clamp(24px, 4vw, 48px); display: flex; flex-direction: column; gap: 20px; }
+    .badge { align-self: flex-start; display: inline-flex; align-items: center; background: var(--green); color: var(--ink); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; padding: 8px 14px; }
+    .badge .dot { width: 10px; height: 10px; background: var(--ink); border-radius: 50%; margin-right: 10px; animation: blink 1.4s infinite; }
+    .status h3 { font-size: clamp(56px, 7vw, 104px); }
+    .status h3 span { color: var(--green); }
+    .status p { font-size: 17px; line-height: 1.65; color: #cfcbc2; }
+    .meta { border: 3px solid var(--cream); background: var(--cream); color: var(--ink); }
+    .meta-row { display: flex; justify-content: space-between; gap: 16px; padding: 14px 18px; border-bottom: 3px solid var(--ink); }
+    .meta-row:last-child { border-bottom: 0; }
+    .meta-key { font-weight: 700; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; padding-top: 3px; flex-shrink: 0; }
+    .meta-val { font-weight: 700; font-size: 16px; text-align: right; }
+    .meta-val.open { background: var(--green); padding: 0 .5em; }
+    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
 
-  /* CTA */
-  .cta{text-align:center;padding:120px 6vw;border-bottom:1px solid var(--line);}
-  .cta h2{font-size:clamp(40px,9vw,140px);text-transform:uppercase;line-height:0.95;margin-bottom:40px;}
-  .btn{
-    display:inline-flex;align-items:center;gap:12px;
-    background:var(--accent);color:#0a0a0a;
-    padding:18px 40px;border-radius:100px;
-    font-size:14px;letter-spacing:0.15em;text-transform:uppercase;font-weight:700;
-    transition:transform 0.25s ease,box-shadow 0.25s ease;
-  }
-  .btn:hover{transform:scale(1.05);box-shadow:0 0 30px rgba(216,255,62,0.25);}
-  .cta-sub{color:var(--txt-dim);font-size:15px;margin-top:24px;}
-  .cta-sub a{color:var(--txt);border-bottom:1px solid var(--line);transition:color 0.2s,border-color 0.2s;}
-  .cta-sub a:hover{color:var(--accent);border-color:var(--accent);}
+    /* CTA */
+    .cta { background: var(--lime); color: var(--ink); border-top: var(--b); border-bottom: var(--b); padding: clamp(56px, 9vw, 120px) 0; overflow: hidden; }
+    .cta h2 { font-size: clamp(80px, 20vw, 320px); line-height: .78; }
+    .cta h2 .o { color: transparent; -webkit-text-stroke: clamp(2px, .5vw, 6px) var(--ink); }
+    .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 28px 40px; margin-top: clamp(28px, 4vw, 48px); }
+    .cta-row p { font-size: clamp(18px, 2vw, 24px); font-weight: 700; max-width: 560px; line-height: 1.35; }
+    .cta-row a.mail { display: inline-block; margin-top: 8px; font-size: 18px; color: var(--ink); }
 
-  /* FOOTER */
-  footer{border-top:1px solid var(--line);padding:80px 6vw 36px;background:var(--bg-2);}
-  .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid var(--line);margin-bottom:32px;}
-  .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:0.08em;display:block;margin-bottom:16px;color:var(--txt);}
-  .footer-tagline{font-size:14px;color:var(--txt-dim);line-height:1.7;max-width:280px;margin-bottom:20px;}
-  .footer-socials{display:flex;gap:10px;}
-  .footer-social{width:38px;height:38px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--txt-dim);transition:border-color 0.2s,color 0.2s;}
-  .footer-social:hover{border-color:var(--accent);color:var(--accent);}
-  .footer-col h4{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;font-weight:500;}
-  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
-  .footer-col a{color:var(--txt-dim);font-size:13px;transition:color 0.2s;}
-  .footer-col a:hover{color:var(--accent);}
-  .footer-col p{color:var(--txt-dim);font-size:13px;line-height:1.7;}
-  .footer-col p a{color:var(--txt);}
-  .hire-btn{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;padding:9px 20px;transition:background 0.2s,color 0.2s;margin-top:12px;}
-  .hire-btn:hover{background:var(--accent);color:var(--bg);}
-  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
-  .footer-copy{font-size:12px;color:var(--txt-dim);}
-  .footer-copy span{color:var(--accent);}
-  .footer-bottom-links{display:flex;gap:20px;}
-  .footer-bottom-links a{font-size:11px;color:var(--txt-dim);letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s;}
-  .footer-bottom-links a:hover{color:var(--accent);}
+    /* FOOTER */
+    footer { background: var(--ink); color: var(--cream); padding: clamp(48px, 7vw, 90px) 0 0; overflow: hidden; }
+    .foot-cols { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; padding-bottom: clamp(40px, 6vw, 72px); }
+    .foot-brand p { color: var(--dim); font-size: 15px; line-height: 1.7; max-width: 380px; margin: 16px 0 24px; }
+    .foot-col h4 { font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink); background: var(--lime); display: inline-block; padding: 5px 10px; margin-bottom: 20px; }
+    .foot-col a, .foot-col p { display: block; color: var(--cream); text-decoration: none; font-size: 17px; font-weight: 500; line-height: 1.5; margin-bottom: 10px; word-break: break-word; }
+    .foot-col a:hover { color: var(--lime); }
+    .social { width: 56px; height: 56px; background: var(--lime); color: var(--ink); border: 3px solid var(--lime); display: inline-flex; align-items: center; justify-content: center; box-shadow: 5px 5px 0 var(--cream); transition: .12s; }
+    .social:hover { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--cream); }
+    .social svg { width: 26px; height: 26px; fill: currentColor; }
+    .giant { font-family: 'Bebas Neue', sans-serif; font-size: clamp(120px, 34vw, 520px); line-height: .74; text-transform: uppercase; color: var(--lime); text-align: center; user-select: none; white-space: nowrap; margin: 0 -2vw; border-top: 4px solid var(--lime); padding-top: .06em; }
+    .foot-bottom { border-top: 4px solid var(--lime); background: var(--lime); color: var(--ink); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 14px 5vw; font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
+    @media (max-width: 1000px) { .foot-cols { grid-template-columns: 1fr 1fr; } .foot-brand { grid-column: 1 / -1; } }
+    @media (max-width: 560px) { .foot-cols { grid-template-columns: 1fr; } }
 
-  @media(max-width:900px){
-    .contact-grid{grid-template-columns:1fr;gap:48px;}
-    .footer-top{grid-template-columns:1fr 1fr;gap:36px;}
-    .footer-brand{grid-column:1/-1;}
-  }
-  @media(max-width:560px){
-    .footer-top{grid-template-columns:1fr;}
-    .page-header{padding:130px 6vw 60px;}
-    .contact-section{padding:64px 6vw;}
-    .cta{padding:80px 6vw;}
-  }
-
-  /* REDUCED MOTION */
-  @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    .status-dot{animation:none;}
-    *{transition:none !important;}
-  }
-
-  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
-</style>
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .ticker-track, .sticker, .chip .dot, .badge .dot { animation: none; } * { transition: none !important; } }
+    a:focus-visible, button:focus-visible { outline: 4px solid var(--cream); outline-offset: 3px; box-shadow: 0 0 0 8px var(--ink); }
+  </style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="/" class="logo display">MARCO</a>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/about/">About</a></li>
-    <li><a href="/projects/">Projects</a></li>
-    <li><a href="/career/">Career</a></li>
-    <li><a href="/contact/" class="active">Contact</a></li>
-  </ul>
-  <a href="mailto:miguelmarcoramcharan@gmail.com" class="nav-cta">Hire Me</a>
-  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- MOBILE MENU (single, correct instance) -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/projects/">Projects</a>
-  <a href="/career/">Career</a>
-  <a href="/contact/">Contact</a>
-  <div class="mm-sub">
-    <a href="https://github.com/marcoramcharan" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a href="mailto:miguelmarcoramcharan@gmail.com">Email</a>
-  </div>
-</div>
-
-<header class="page-header">
-  <div class="eyebrow">Contact</div>
-  <h1 class="display">Get in<br>touch.</h1>
-  <div class="page-header-sub">
-    <p>Open to full-time software development roles, contract and freelance work, and interesting technical collaborations. If you'd like to talk, send an email — that's the fastest way to reach me.</p>
-  </div>
-</header>
-
-<section class="contact-section">
-  <div class="contact-grid">
-    <div class="contact-links">
-
-      <a href="mailto:miguelmarcoramcharan@gmail.com" class="contact-link">
-        <div>
-          <div class="contact-link-label">Email</div>
-          <div class="contact-link-value">miguelmarcoramcharan@gmail.com</div>
-        </div>
-        <span class="contact-link-arrow" aria-hidden="true">↗</span>
-      </a>
-
-      <a href="https://github.com/marcoramcharan" target="_blank" rel="noopener noreferrer" class="contact-link">
-        <div>
-          <div class="contact-link-label">GitHub</div>
-          <div class="contact-link-value">github.com/marcoramcharan</div>
-        </div>
-        <span class="contact-link-arrow" aria-hidden="true">↗</span>
-      </a>
-
-      <div class="contact-link static">
-        <div>
-          <div class="contact-link-label">Location</div>
-          <div class="contact-link-value">Durban, South Africa</div>
-        </div>
-        <span aria-hidden="true">📍</span>
-      </div>
-
-      <div style="margin-top:8px;">
-        <button type="button" class="copy-btn" id="copyEmailBtn" data-email="miguelmarcoramcharan@gmail.com">
-          <span aria-hidden="true">📋</span>
-          <span id="copyEmailLabel">Copy email address</span>
-        </button>
-      </div>
-
-    </div>
-
-    <div class="status-card">
-      <div class="status-badge"><span class="status-dot" aria-hidden="true"></span>Open to opportunities</div>
-      <h3 class="display">Available for hire.</h3>
-      <p>I'm currently looking for a full-time software development role. Open to contract and freelance work as well, and happy to discuss interesting technical problems either way.</p>
-      <div class="status-meta">
-        <div class="meta-row"><span class="meta-key">Role type</span><span class="meta-val">Full-time · Contract · Freelance</span></div>
-        <div class="meta-row"><span class="meta-key">Location</span><span class="meta-val">Durban · Remote · Hybrid</span></div>
-        <div class="meta-row" style="border-bottom:none;"><span class="meta-key">Status</span><span class="meta-val" style="color:var(--green);">Open</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <h2 class="display">Don't be<br>a stranger.</h2>
-  <a class="btn" href="mailto:miguelmarcoramcharan@gmail.com">Send me an email →</a>
-  <p class="cta-sub">
-    Or reach me directly at <a href="mailto:miguelmarcoramcharan@gmail.com">miguelmarcoramcharan@gmail.com</a>
-  </p>
-</section>
-
-<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="display footer-logo">MARCO</div>
-      <p class="footer-tagline">Self-taught full-stack developer from Durban. Contributed to production software at Decidio GmbH on the Truendo consent management platform.</p>
-      <div class="footer-socials">
-        <a href="https://github.com/marcoramcharan" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Marco Ramcharan on GitHub">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Navigate</h4>
+  <nav class="top">
+    <div class="nav-in">
+      <a href="/" class="logo">MARCO</a>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/about/">About</a></li>
         <li><a href="/projects/">Projects</a></li>
         <li><a href="/career/">Career</a></li>
-        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/contact/" class="active">Contact</a></li>
       </ul>
+      <a class="btn sm" href="mailto:miguelmarcoramcharan@gmail.com">Hire me</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="footer-col">
-      <h4>Elsewhere</h4>
-      <ul>
-        <li><a href="https://github.com/marcoramcharan" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://truendo.com" target="_blank" rel="noopener noreferrer">Truendo</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Get in touch</h4>
-      <p>
-        <a href="mailto:miguelmarcoramcharan@gmail.com">miguelmarcoramcharan@gmail.com</a><br>
-        Durban, KwaZulu-Natal
-      </p>
-      <a href="mailto:miguelmarcoramcharan@gmail.com" class="hire-btn">Hire Me ↗</a>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/projects/">Projects</a>
+    <a href="/career/">Career</a>
+    <a href="/contact/">Contact</a>
+    <div class="mm-sub">
+      <a href="https://github.com/marcoramcharan" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="mailto:miguelmarcoramcharan@gmail.com">Email</a>
     </div>
   </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">© <span id="year">2025</span> <span>Marco Ramcharan</span> · Full Stack Developer</div>
-    <div class="footer-bottom-links">
-      <a href="/about/">About</a>
-      <a href="/projects/">Projects</a>
-      <a href="/career/">Career</a>
+
+  <main>
+    <!-- HERO -->
+    <header class="page-hero">
+      <div class="ph-in">
+        <div class="chip-row">
+          <span class="chip dark"><span class="dot"></span>Open to opportunities</span>
+          <span class="chip">Contact</span>
+        </div>
+        <h1 class="display">
+          <span class="row">Get in</span>
+          <span class="row"><span class="block">touch.</span></span>
+        </h1>
+        <div class="sticker" aria-hidden="true">Say<br>hello</div>
+        <p class="lead">Open to full-time software development roles, contract and freelance work, and interesting technical collaborations. If you'd like to talk, send an email — that's the fastest way to reach me.</p>
+      </div>
+    </header>
+
+    <!-- TICKER -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Full-time</span><i>✱</i><span class="o">Contract</span><i>✱</i><span>Freelance</span><i>✱</i><span class="o">Remote</span><i>✱</i><span>Hybrid</span><i>✱</i><span class="o">Durban</span><i>✱</i>
+        <span>Full-time</span><i>✱</i><span class="o">Contract</span><i>✱</i><span>Freelance</span><i>✱</i><span class="o">Remote</span><i>✱</i><span>Hybrid</span><i>✱</i><span class="o">Durban</span><i>✱</i>
+      </div>
     </div>
-  </div>
-</footer>
 
-<script>
-  // MOBILE MENU
-  const burger = document.getElementById('burger');
-  const mobileMenu = document.getElementById('mobileMenu');
+    <!-- CONTACT -->
+    <section>
+      <div class="wrap contact-grid">
+        <div class="links">
+          <a href="mailto:miguelmarcoramcharan@gmail.com" class="clink">
+            <div>
+              <div class="lab">Email</div>
+              <div class="val">miguelmarcoramcharan@gmail.com</div>
+            </div>
+            <span class="arr" aria-hidden="true">↗</span>
+          </a>
 
-  function setMenu(open) {
-    mobileMenu.classList.toggle('open', open);
-    burger.classList.toggle('open', open);
-    burger.setAttribute('aria-expanded', String(open));
-    document.body.style.overflow = open ? 'hidden' : '';
-  }
+          <a href="https://github.com/marcoramcharan" target="_blank" rel="noopener noreferrer" class="clink">
+            <div>
+              <div class="lab">GitHub</div>
+              <div class="val">github.com/marcoramcharan</div>
+            </div>
+            <span class="arr" aria-hidden="true">↗</span>
+          </a>
 
-  burger.addEventListener('click', () => {
-    setMenu(!mobileMenu.classList.contains('open'));
-  });
+          <div class="clink static">
+            <div>
+              <div class="lab">Location</div>
+              <div class="val">Durban, South Africa</div>
+            </div>
+            <span class="arr" aria-hidden="true">📍</span>
+          </div>
 
-  mobileMenu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => setMenu(false));
-  });
+          <button type="button" class="copy-btn" id="copyEmailBtn" data-email="miguelmarcoramcharan@gmail.com">
+            <span aria-hidden="true">📋</span>
+            <span id="copyEmailLabel">Copy email address</span>
+          </button>
+        </div>
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-      setMenu(false);
-      burger.focus();
+        <div class="status">
+          <div class="badge"><span class="dot" aria-hidden="true"></span>Open to opportunities</div>
+          <h3 class="display">Available<br><span>for hire.</span></h3>
+          <p>I'm currently looking for a full-time software development role. Open to contract and freelance work as well, and happy to discuss interesting technical problems either way.</p>
+          <div class="meta">
+            <div class="meta-row"><span class="meta-key">Role type</span><span class="meta-val">Full-time · Contract · Freelance</span></div>
+            <div class="meta-row"><span class="meta-key">Location</span><span class="meta-val">Durban · Remote · Hybrid</span></div>
+            <div class="meta-row"><span class="meta-key">Status</span><span class="meta-val open">Open</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="wrap">
+        <h2 class="display">Don't be<br><span class="o">a stranger.</span></h2>
+        <div class="cta-row">
+          <a class="btn" href="mailto:miguelmarcoramcharan@gmail.com">Send me an email →</a>
+          <div>
+            <p>Or reach me directly.</p>
+            <a class="mail" href="mailto:miguelmarcoramcharan@gmail.com">miguelmarcoramcharan@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-cols">
+        <div class="foot-brand">
+          <a href="/" class="logo">MARCO</a>
+          <p>Self-taught full-stack developer from Durban. Contributed to production software at Decidio GmbH on the Truendo consent management platform.</p>
+          <a class="social" href="https://github.com/marcoramcharan" target="_blank" rel="noopener noreferrer" aria-label="Marco Ramcharan on GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+          </a>
+        </div>
+        <div class="foot-col">
+          <h4>Navigate</h4>
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="/projects/">Projects</a>
+          <a href="/career/">Career</a>
+          <a href="/contact/">Contact</a>
+        </div>
+        <div class="foot-col">
+          <h4>Elsewhere</h4>
+          <a href="https://github.com/marcoramcharan" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://truendo.com" target="_blank" rel="noopener noreferrer">Truendo</a>
+        </div>
+        <div class="foot-col">
+          <h4>Get in touch</h4>
+          <a href="mailto:miguelmarcoramcharan@gmail.com">miguelmarcoramcharan@gmail.com</a>
+          <p>Durban, KwaZulu-Natal</p>
+        </div>
+      </div>
+    </div>
+    <div class="giant" aria-hidden="true">Marco</div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2025</span> Marco Ramcharan</span>
+      <span>Full Stack Developer · Durban</span>
+    </div>
+  </footer>
+
+  <script>
+    const burger = document.getElementById('burger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function setMenu(open) {
+      mobileMenu.classList.toggle('open', open);
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
     }
-  });
-
-  // COPY EMAIL
-  const copyBtn = document.getElementById('copyEmailBtn');
-  const copyLabel = document.getElementById('copyEmailLabel');
-  if (copyBtn && navigator.clipboard) {
-    copyBtn.addEventListener('click', async () => {
-      const email = copyBtn.dataset.email;
-      try {
-        await navigator.clipboard.writeText(email);
-        copyBtn.classList.add('copied');
-        copyLabel.textContent = 'Copied to clipboard';
-        setTimeout(() => {
-          copyBtn.classList.remove('copied');
-          copyLabel.textContent = 'Copy email address';
-        }, 2000);
-      } catch (err) {
-        // Fallback: select the text for manual copy
-        copyLabel.textContent = 'Press Ctrl/Cmd+C to copy';
-      }
+    burger.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('open')));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) { setMenu(false); burger.focus(); }
     });
-  } else if (copyBtn) {
-    // Hide button if clipboard API isn't available
-    copyBtn.style.display = 'none';
-  }
 
-  // DYNAMIC YEAR
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+    // Copy email
+    const copyBtn = document.getElementById('copyEmailBtn');
+    const copyLabel = document.getElementById('copyEmailLabel');
+    if (copyBtn && navigator.clipboard) {
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(copyBtn.dataset.email);
+          copyBtn.classList.add('copied');
+          copyLabel.textContent = 'Copied to clipboard';
+          setTimeout(() => { copyBtn.classList.remove('copied'); copyLabel.textContent = 'Copy email address'; }, 2000);
+        } catch (err) {
+          copyLabel.textContent = 'Press Ctrl/Cmd+C to copy';
+        }
+      });
+    } else if (copyBtn) {
+      copyBtn.style.display = 'none';
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
+
 </html>
